@@ -1,0 +1,28 @@
+var express = require('express');
+var router = express.Router();
+var ctrlHome = require('../controllers/home');
+var ctrlService = require('../controllers/service');
+var ctrlTeam = require('../controllers/team');
+var ctrlOffer = require('../controllers/offer');
+var ctrlMenu = require('../controllers/menu');
+
+/* GET home page. */
+router.get('/', ctrlHome.index);
+
+/* Services pages */
+router.get('/services',ctrlService.index);
+router.get('/services/school-menu',ctrlService.schoolMenu);
+
+/* Team pages */
+router.get('/team',ctrlTeam.index);
+router.get('/team/team-member',ctrlTeam.teamMember);
+
+/* Offer pages */
+router.get('/offers',ctrlOffer.index);
+
+/* Menu pages */
+router.get('/menu',ctrlMenu.index);
+router.get('/menu/appetizer',ctrlMenu.appetizer);
+router.get('/menu/appetizer/barbacoa',ctrlMenu.barbacoa);
+
+module.exports = router;

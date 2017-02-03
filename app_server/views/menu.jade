@@ -1,0 +1,30 @@
+extends layouts/main
+
+block content
+    // Breadcrumbs
+    .breadcrumb
+        .container
+            ul
+                li
+                    a(href='/') Home
+                li.active
+                    a(href='/menu') Menu
+    // Menu
+    section.section-menu
+        .container
+            .col-md-3
+                a(href='/menu/appetizer')
+                    img(src='img/menu/appetizers.jpg', alt='', width='')
+                    p Appetizer
+            .col-md-3
+                a(href='/menu/appetizer')
+                    img(src='img/menu/main-courses.jpg', alt='', width='')
+                    p Main Courses
+            .col-md-3
+                a(href='/menu/appetizer')
+                    img(src='img/menu/desserts.jpg', alt='', width='')
+                    p Desserts
+            .col-md-3
+                a(href='/menu/appetizer')
+                    img(src='img/menu/beverages.jpg', alt='', width='')
+                    p Bevarages

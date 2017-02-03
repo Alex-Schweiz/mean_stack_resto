@@ -1,0 +1,178 @@
+html
+    head
+        meta(charset='UTF-8')
+        meta(name='viewport', content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0')
+        meta(http-equiv='X-UA-Compatible', content='ie=edge')
+        title Home
+        // Font Alegreya
+        link(href='https://fonts.googleapis.com/css?family=Alegreya+Sans:400,400i,700,800', rel='stylesheet')
+        // font awesome
+        link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
+        // font icon
+        link(rel='shortcut icon', type='image/png', href='img/icon.png')
+        // Latest compiled and minified CSS
+        link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+        // Custom style
+        link(rel='stylesheet', href='../css/styles.css')
+        // jQuery library
+        script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js')
+        // Latest compiled Bootstrap JS
+        script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+    body
+        section.common-menu
+            .container
+                .row.upper-info
+                    ul.pull-right
+                        li
+                            span.fa.fa-map-marker
+                            |  6087 Richmond hwy, Alexandria, VA
+                        li
+                            span.fa.fa-phone
+                            |  703 329 0632
+                        li
+                            span.fa.fa-clock-o
+                            |  Mo-Fr 11:00-00:00, Sa-Su 15:00-00:00
+                .row
+                    img(src='../img/logo.png', alt='logo')
+                    nav.pull-right
+                        ul.menu
+                            li
+                                a(href='/') Home
+                            li
+                                a(href='/services') Services
+                            li
+                                a(href='/team') Team
+                            li
+                                a(href='/offers') Offers
+                            li
+                                a(href='/menu') Our menu
+        // Breadcrumbs
+        .breadcrumb
+            .container
+                ul
+                    li
+                        a(href='/') Home
+                    li
+                        a(href='/team') Team
+                    li.active
+                        a(href='/team/team-member') Team Member
+        // Team Member
+        section.section-team-member
+            .container
+                .col-md-6
+                    img(src='../img/team-member/team-member-4.jpg', alt='')
+                .col-md-6
+                    h3 Manuel Umberto Juarez
+                    p.position Chef
+                    p.description
+                        | While our founder is our main chef, he’s also a part of our family! Managing our menu,
+                        | interior, and finances, this man still manages to rock his major position – cooking a majority of our
+                        | restaurant dishes!
+                    ul.team-link
+                        li
+                            a.icon.fa.fa-facebook(href='#')
+                        li
+                            a.icon.fa.fa-twitter(href='#')
+                        li
+                            a.icon.fa.fa-google-plus(href='#')
+        // Reservation
+        section.section-reservation
+            .container
+                .col-md-1
+                .col-md-5
+                    h3 Reservation
+                    p
+                        | We are always ready to meet all your needs and requirements during the night time. Please call 555.329.0632 or
+                        | fill out the contact form and we will call back to you ASAP.
+                .col-md-5.reservation-form
+                    form(action='')
+                        .col-md-6
+                            .form-group
+                                label.form-label.form-label-outside(for='contact-name')
+                                input#contact-name.form-control.form-control-has-validation.form-control-last-child(name='name', data-contraints='@Required', type='text', placeholder='Your name')
+                                span.form-validation
+                        .col-md-6
+                            .form-group
+                                label.form-label.form-label-outside(for='contact-email')
+                                input#contact-phone.form-control.form-control-has-validation.form-control-last-child(name='email', data-contraints='@Required', type='text', placeholder='Phone')
+                                span.form-validation
+                        .col-md-12
+                            .form-group
+                                label.form-label.form-label-outside(for='contact-email')
+                                input#contact-email.form-control.form-control-has-validation.form-control-last-child(name='email', data-contraints='@Required', type='email', placeholder='Email')
+                                span.form-validation
+                        .col-sm-2
+                            button.btn.btn-primary(type='submit') Submit
+        footer
+            .container
+                .row.footer-info
+                    .col-md-4.col-sm-12.col-xs-12
+                        img(src='../img/logo.png', alt='')
+                        p
+                            | Hidalgo is the most authentically Mexican restaurant in Juneau and probably in the whole of Alaska! We bring the
+                            | traditional Mexican cuisine and mariachi bands to this cold-weathered state... Try any of our
+                            | Mexican dishes, be it a nacho with jalapeño or a tequila induced burrito, and you'll feel like visiting Mexico!
+                    .col-md-4.col-sm-12.col-xs-12
+                        h4 Instagram
+                        .insta-items
+                            // First row
+                            .row
+                                .insta-item
+                                    a.insta-link(href='https://www.instagram.com/p/BK76usIBxMX/', target='_blank')
+                                        img.insta-img(src='../img/insta/insta-1.jpg', alt='')
+                                .insta-item
+                                    a.insta-link(href='https://www.instagram.com/p/BK76usIBxMX/', target='_blank')
+                                        img.insta-img(src='../img/insta/insta-2.jpg', alt='')
+                                .insta-item
+                                    a.insta-link(href='https://www.instagram.com/p/BK76usIBxMX/', target='_blank')
+                                        img.insta-img(src='../img/insta/insta-3.jpg', alt='')
+                                .insta-item
+                                    a.insta-link(href='https://www.instagram.com/p/BK76usIBxMX/', target='_blank')
+                                        img.insta-img(src='../img/insta/insta-4.jpg', alt='')
+                            // Second row
+                            .row
+                                .insta-item
+                                    a.insta-link(href='https://www.instagram.com/p/BK76usIBxMX/', target='_blank')
+                                        img.insta-img(src='../img/insta/insta-5.jpg', alt='')
+                                .insta-item
+                                    a.insta-link(href='https://www.instagram.com/p/BK76usIBxMX/', target='_blank')
+                                        img.insta-img(src='../img/insta/insta-6.jpg', alt='')
+                                .insta-item
+                                    a.insta-link(href='https://www.instagram.com/p/BK76usIBxMX/', target='_blank')
+                                        img.insta-img(src='../img/insta/insta-7.jpg', alt='')
+                                .insta-item
+                                    a.insta-link(href='https://www.instagram.com/p/BK76usIBxMX/', target='_blank')
+                                        img.insta-img(src='../img/insta/insta-8.jpg', alt='')
+                    .col-md-4.col-sm-12.col-xs-12
+                        h4 Contact us
+                        ul
+                            li
+                                span.fa.fa-map-marker
+                                |  6087 Richmond hwy, Alexandria, VA
+                            li
+                                span.fa.fa-phone
+                                |  703 329 0632
+                            li
+                                span.fa.fa-clock-o
+                                |  Mo-Fr 11:00-00:00, Sa-Su 15:00-00:00
+                            li
+                                span.fa.fa-envelope
+                                |  info@demolink.org
+            hr
+        // lower footer
+        section.lower-footer
+            .container.lower-footer
+                .col-md-6.col-xs-12
+                    p © 2017 Alex Resto. All Rights Reserved. Terms of use and Privacy Policy
+                .col-md-6.col-xs-12
+                    ul.pull-right
+                        li
+                            a.icon.fa.fa-facebook(href='#')
+                        li
+                            a.icon.fa.fa-twitter(href='#')
+                        li
+                            a.icon.fa.fa-google-plus(href='#')
+                        li
+                            a.icon.fa.fa-youtube(href='#')
+                        li
+                            a.icon.fa.fa-rss(href='#')
