@@ -26,46 +26,9 @@ block content
     section.section-our-services
         .container
             .row
-                .col-md-4
-                    a(href='/services/school-menu')
-                        img.img-responsive(src='img/services-icon-1-1.png', alt='')
-                    a(href='/services/school-menu') Catering
-                    p
-                        | We offer a wide range of catering for any type of a casual or a festive event – from a wedding
-                        | to a birthday, all enhanced with authentic Mexican food!
-                .col-md-4
-                    a(href='/services/school-menu')
-                        img.img-responsive(src='img/services-icon-2-1.png', alt='')
-                    a(href='/services/school-menu') Waiter rental
-                    p
-                        | We are not afraid to lend you with our waiters, whichever food-related event you’ll be using them
-                        | at… They will heighten a customer service up to a notch!
-                .col-md-4
-                    a(href='/services/school-menu')
-                        img.img-responsive(src='img/services-icon-3-1.png', alt='')
-                    a(href='/services/school-menu') Business catering
-                    p
-                        | Why we offer catering for both individuals and companies, this service gains more traction… Order
-                        | it and add Mexican spice to your regular business meeting!
-            .row
-                .col-md-4
-                    a(href='/services/school-menu')
-                        img.img-responsive(src='img/services-icon-4-1.png', alt='')
-                    a(href='/services/school-menu') School menus
-                    p
-                        | In the last 3 years, we’ve supplied more than 15 Juneau high schools with a quality Mexican
-                        | food for kids’ lunchboxes! Join the list now!
-                .col-md-4
-                    a(href='/services/school-menu')
-                        img.img-responsive(src='img/services-icon-5-1.png', alt='')
-                    a(href='/services/school-menu') Party consulting
-                    p
-                        | If your event planning agency or your company needs our piece of advice on catering  at your party,
-                        | be our guests… We’ll be delighted to help you with that!
-                .col-md-4
-                    a(href='/services/school-menu')
-                        img.img-responsive(src='img/services-icon-6-1.png', alt='')
-                    a(href='/services/school-menu') Diet menu
-                    p
-                        | Though Mexican food is rarely associated with a term of a “diet food”, we’ll be glad to denounce that
-                        | wrongful notion with our vegetarian, yet nutritious diet meals per order!
+                each service in allServicesInfo
+                    .col-md-4
+                        a(href='#{service.link}')
+                            img.img-responsive(src='#{service.image}', alt='')
+                        a(href='#{service.link}') Catering
+                        p= service.description

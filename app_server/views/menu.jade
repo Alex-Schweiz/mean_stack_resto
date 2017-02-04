@@ -12,19 +12,8 @@ block content
     // Menu
     section.section-menu
         .container
-            .col-md-3
-                a(href='/menu/appetizer')
-                    img(src='img/menu/appetizers.jpg', alt='', width='')
-                    p Appetizer
-            .col-md-3
-                a(href='/menu/appetizer')
-                    img(src='img/menu/main-courses.jpg', alt='', width='')
-                    p Main Courses
-            .col-md-3
-                a(href='/menu/appetizer')
-                    img(src='img/menu/desserts.jpg', alt='', width='')
-                    p Desserts
-            .col-md-3
-                a(href='/menu/appetizer')
-                    img(src='img/menu/beverages.jpg', alt='', width='')
-                    p Bevarages
+            each menu in menus
+                .col-md-3
+                    a(href='#{menu.link}')
+                        img(src='#{menu.image}', alt='', width='')
+                        p= menu.menuCategory

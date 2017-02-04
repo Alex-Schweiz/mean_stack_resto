@@ -3,7 +3,7 @@ html
         meta(charset='UTF-8')
         meta(name='viewport', content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0')
         meta(http-equiv='X-UA-Compatible', content='ie=edge')
-        title Home
+        title= title
         // Font Alegreya
         link(href='https://fonts.googleapis.com/css?family=Alegreya+Sans:400,400i,700,800', rel='stylesheet')
         // font awesome
@@ -25,27 +25,20 @@ html
                     ul.pull-right
                         li
                             span.fa.fa-map-marker
-                            |  6087 Richmond hwy, Alexandria, VA
+                            | #{generalInfo.address}
                         li
                             span.fa.fa-phone
-                            |  703 329 0632
+                            | #{generalInfo.tel}
                         li
                             span.fa.fa-clock-o
-                            |  Mo-Fr 11:00-00:00, Sa-Su 15:00-00:00
+                            | #{generalInfo.workingTime}
                 .row
                     img(src='../../img/logo.png', alt='logo')
                     nav.pull-right
                         ul.menu
-                            li
-                                a(href='/') Home
-                            li
-                                a(href='/services') Services
-                            li
-                                a(href='/team') Team
-                            li
-                                a(href='/offers') Offers
-                            li
-                                a(href='/menu') Our menu
+                            each nav in navMenu
+                                li
+                                    a(href='#{nav.link}')= nav.name
         // Breadcrumbs
         .breadcrumb
             .container
@@ -61,116 +54,70 @@ html
         // Appetizer
         section.section-barbacoa
             .container
-                img(src='../../img/dish/menu-item-1-1-1170x679.jpg', alt='')
+                img(src='#{oneDish.image}', alt='')
                 .row.dish-description
                     .col-md-8
-                        h2 Authentic Mexican Barbacoa
-                        p As it turns out, not everyone loves their guacamole the same!
-                        p
-                            | In fact, this mild version of a guacamole dish is proven to be our yet most popular main course dish!
-                        p It’s milder than not, lemon spruced and not too much spicy to become hot!
+                        h2= oneDish.name
+                        p= oneDish.description
                     .col-md-4.dish-content
                         h3
                             | Price:
                             span.price
-                            | $5.45
+                            | #{oneDish.price}
                         .property
                             h4 Portion Size
                             p
                                 span.fa.fa-chevron-right
-                                | Weight: 650g
+                                | Weight: #{oneDish.weight}
                         .property
                             h4 Ingredients
-                            p
-                                span.fa.fa-chevron-right
-                                | 200g of Black Angus steak
-                            p
-                                span.fa.fa-chevron-right
-                                | Eggs
-                            p
-                                span.fa.fa-chevron-right
-                                | Lemon
-                            p
-                                span.fa.fa-chevron-right
-                                | Rice
-                            p
-                                span.fa.fa-chevron-right
-                                | Salmon
-                            p
-                                span.fa.fa-chevron-right
-                                | Salt
-                            p
-                                span.fa.fa-chevron-right
-                                | Thyme
-                            p
-                                span.fa.fa-chevron-right
-                                | Water
+                            each item in oneDish.ingredients
+                                p
+                                    span.fa.fa-chevron-right
+                                    | #{item}
                         .property
                             h4 Nutrition Facts
                             p
                                 span.fa.fa-chevron-right
-                                | Calories: 650
+                                | Calories: #{oneDish.calories}
         footer
             .container
                 .row.footer-info
                     .col-md-4.col-sm-12.col-xs-12
                         img(src='../../img/logo.png', alt='')
-                        p
-                            | Hidalgo is the most authentically Mexican restaurant in Juneau and probably in the whole of Alaska! We bring the
-                            | traditional Mexican cuisine and mariachi bands to this cold-weathered state... Try any of our
-                            | Mexican dishes, be it a nacho with jalapeño or a tequila induced burrito, and you'll feel like visiting Mexico!
+                        p= generalInfo.mainDescription
                     .col-md-4.col-sm-12.col-xs-12
                         h4 Instagram
                         .insta-items
                             // First row
                             .row
-                                .insta-item
-                                    a.insta-link(href='https://www.instagram.com/p/BK76usIBxMX/', target='_blank')
-                                        img.insta-img(src='../../img/insta/insta-1.jpg', alt='')
-                                .insta-item
-                                    a.insta-link(href='https://www.instagram.com/p/BK76usIBxMX/', target='_blank')
-                                        img.insta-img(src='../../img/insta/insta-2.jpg', alt='')
-                                .insta-item
-                                    a.insta-link(href='https://www.instagram.com/p/BK76usIBxMX/', target='_blank')
-                                        img.insta-img(src='../../img/insta/insta-3.jpg', alt='')
-                                .insta-item
-                                    a.insta-link(href='https://www.instagram.com/p/BK76usIBxMX/', target='_blank')
-                                        img.insta-img(src='../../img/insta/insta-4.jpg', alt='')
-                            // Second row
-                            .row
-                                .insta-item
-                                    a.insta-link(href='https://www.instagram.com/p/BK76usIBxMX/', target='_blank')
-                                        img.insta-img(src='../../img/insta/insta-5.jpg', alt='')
-                                .insta-item
-                                    a.insta-link(href='https://www.instagram.com/p/BK76usIBxMX/', target='_blank')
-                                        img.insta-img(src='../../img/insta/insta-6.jpg', alt='')
-                                .insta-item
-                                    a.insta-link(href='https://www.instagram.com/p/BK76usIBxMX/', target='_blank')
-                                        img.insta-img(src='../../img/insta/insta-7.jpg', alt='')
-                                .insta-item
-                                    a.insta-link(href='https://www.instagram.com/p/BK76usIBxMX/', target='_blank')
-                                        img.insta-img(src='../../img/insta/insta-8.jpg', alt='')
+                                each instaItem in instagram
+                                    .insta-item
+                                        a.insta-link(href='#{instaItem.link}', target='_blank')
+                                            img.insta-img(src='../../#{instaItem.image}', alt='')
+
+
                     .col-md-4.col-sm-12.col-xs-12
                         h4 Contact us
                         ul
                             li
                                 span.fa.fa-map-marker
-                                |  6087 Richmond hwy, Alexandria, VA
+                                |  #{generalInfo.address}
                             li
                                 span.fa.fa-phone
-                                |  703 329 0632
+                                |  #{generalInfo.tel}
                             li
                                 span.fa.fa-clock-o
-                                |  Mo-Fr 11:00-00:00, Sa-Su 15:00-00:00
+                                | #{generalInfo.workingTime}
                             li
                                 span.fa.fa-envelope
-                                |  info@demolink.org
+                                |  #{generalInfo.email}
             hr
         // lower footer
         section.lower-footer
             .container.lower-footer
                 .col-md-6.col-xs-12
-                    p © 2017 Alex Resto. All Rights Reserved. Terms of use and Privacy Policy
+                    p= generalInfo.copyright
                 .col-md-6.col-xs-12
                     ul.pull-right
                         li
