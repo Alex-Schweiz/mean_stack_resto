@@ -1,0 +1,382 @@
+extends layouts/main
+
+block content
+    .container.body
+        .main_container
+            .col-md-3.left_col
+                .left_col.scroll-view
+                    .navbar.nav_title
+                        a.site_title(href='/admin')
+                            i.fa.fa-asterisk
+                            span Resto Admin
+                    .clearfix
+                    // menu profile quick info
+                    .profile
+                        .profile_pic
+                            img.img-circle.profile_img(src='images/img.jpg', alt='...')
+                        .profile_info
+                            span Welcome,
+                            h2 John Doe
+                    br
+                    // sidebar menu
+                    include includes/navigation
+            // top navigation
+            .top_nav
+                .nav_menu
+                    nav
+                        .nav.toggle
+                            a#menu_toggle
+                                i.fa.fa-bars
+            // page content
+            .right_col(role='main')
+                div
+                    // Content goes here
+                    .page-title
+                        .title_left
+                            h3 Deliveries
+                    .clearfix
+                    .row
+                        .col-md-12.col-sm-12.col-xs-12
+                            .clearfix
+                            table#datatable.table.table-striped.table-bordered
+                                thead
+                                    tr
+                                        th id
+                                        th id_client
+                                        th Content
+                                        th Status
+                                        th Deliverer
+                                        th Address
+                                        th Price
+                                        th Date
+                                tbody
+                                    tr
+                                        td 1
+                                        td 2
+                                        td Tako, Chicken, Tomato
+                                        td
+                                            span.label.label-primary Added
+                                        td Mario Przasd
+                                        td London,Down street,82
+                                        td $ 38
+                                        td 2016/10/25
+                                    tr
+                                        td 2
+                                        td 5
+                                        td Pizza, Patric star, Sponge
+                                        td
+                                            span.label.label-success Finished
+                                        td Hagrid the Forester
+                                        td Paris, Christelle rue,82
+                                        td $ 45
+                                        td 2016/10/24
+                                    tr
+                                        td 3
+                                        td 4
+                                        td Jelly, Cream, asdsad
+                                        td
+                                            span.label.label-danger Rejected
+                                        td None
+                                        td Nice,Roi rue,289
+                                        td $ 23
+                                        td 2016/10/26
+                                    tr
+                                        td 1
+                                        td 2
+                                        td Tako, Chicken, Tomato
+                                        td
+                                            span.label.label-primary Added
+                                        td Mario Przasd
+                                        td London,Down street,82
+                                        td $ 38
+                                        td 2016/10/25
+                                    tr
+                                        td 2
+                                        td 5
+                                        td Pizza, Patric star, Sponge
+                                        td
+                                            span.label.label-success Finished
+                                        td Hagrid the Forester
+                                        td Paris, Christelle rue,82
+                                        td $ 45
+                                        td 2016/10/24
+                                    tr
+                                        td 3
+                                        td 4
+                                        td Jelly, Cream, asdsad
+                                        td
+                                            span.label.label-danger Rejected
+                                        td None
+                                        td Nice,Roi rue,289
+                                        td $ 23
+                                        td 2016/10/26
+                                    tr
+                                        td 1
+                                        td 2
+                                        td Tako, Chicken, Tomato
+                                        td
+                                            span.label.label-primary Added
+                                        td Mario Przasd
+                                        td London,Down street,82
+                                        td $ 38
+                                        td 2016/10/25
+                                    tr
+                                        td 2
+                                        td 5
+                                        td Pizza, Patric star, Sponge
+                                        td
+                                            span.label.label-success Finished
+                                        td Hagrid the Forester
+                                        td Paris, Christelle rue,82
+                                        td $ 45
+                                        td 2016/10/24
+                                    tr
+                                        td 3
+                                        td 4
+                                        td Jelly, Cream, asdsad
+                                        td
+                                            span.label.label-danger Rejected
+                                        td None
+                                        td Nice,Roi rue,289
+                                        td $ 23
+                                        td 2016/10/26
+                                    tr
+                                        td 1
+                                        td 2
+                                        td Tako, Chicken, Tomato
+                                        td
+                                            span.label.label-primary Added
+                                        td Mario Przasd
+                                        td London,Down street,82
+                                        td $ 38
+                                        td 2016/10/25
+                                    tr
+                                        td 2
+                                        td 5
+                                        td Pizza, Patric star, Sponge
+                                        td
+                                            span.label.label-success Finished
+                                        td Hagrid the Forester
+                                        td Paris, Christelle rue,82
+                                        td $ 45
+                                        td 2016/10/24
+                                    tr
+                                        td 3
+                                        td 4
+                                        td Jelly, Cream, asdsad
+                                        td
+                                            span.label.label-danger Rejected
+                                        td None
+                                        td Nice,Roi rue,289
+                                        td $ 23
+                                        td 2016/10/26
+                                    tr
+                                        td 1
+                                        td 2
+                                        td Tako, Chicken, Tomato
+                                        td
+                                            span.label.label-primary Added
+                                        td Mario Przasd
+                                        td London,Down street,82
+                                        td $ 38
+                                        td 2016/10/25
+                                    tr
+                                        td 2
+                                        td 5
+                                        td Pizza, Patric star, Sponge
+                                        td
+                                            span.label.label-success Finished
+                                        td Hagrid the Forester
+                                        td Paris, Christelle rue,82
+                                        td $ 45
+                                        td 2016/10/24
+                                    tr
+                                        td 3
+                                        td 4
+                                        td Jelly, Cream, asdsad
+                                        td
+                                            span.label.label-danger Rejected
+                                        td None
+                                        td Nice,Roi rue,289
+                                        td $ 23
+                                        td 2016/10/26
+                                    tr
+                                        td 1
+                                        td 2
+                                        td Tako, Chicken, Tomato
+                                        td
+                                            span.label.label-primary Added
+                                        td Mario Przasd
+                                        td London,Down street,82
+                                        td $ 38
+                                        td 2016/10/25
+                                    tr
+                                        td 2
+                                        td 5
+                                        td Pizza, Patric star, Sponge
+                                        td
+                                            span.label.label-success Finished
+                                        td Hagrid the Forester
+                                        td Paris, Christelle rue,82
+                                        td $ 45
+                                        td 2016/10/24
+                                    tr
+                                        td 3
+                                        td 4
+                                        td Jelly, Cream, asdsad
+                                        td
+                                            span.label.label-danger Rejected
+                                        td None
+                                        td Nice,Roi rue,289
+                                        td $ 23
+                                        td 2016/10/26
+                                    tr
+                                        td 1
+                                        td 2
+                                        td Tako, Chicken, Tomato
+                                        td
+                                            span.label.label-primary Added
+                                        td Mario Przasd
+                                        td London,Down street,82
+                                        td $ 38
+                                        td 2016/10/25
+                                    tr
+                                        td 2
+                                        td 5
+                                        td Pizza, Patric star, Sponge
+                                        td
+                                            span.label.label-success Finished
+                                        td Hagrid the Forester
+                                        td Paris, Christelle rue,82
+                                        td $ 45
+                                        td 2016/10/24
+                                    tr
+                                        td 3
+                                        td 4
+                                        td Jelly, Cream, asdsad
+                                        td
+                                            span.label.label-danger Rejected
+                                        td None
+                                        td Nice,Roi rue,289
+                                        td $ 23
+                                        td 2016/10/26
+                                    tr
+                                        td 1
+                                        td 2
+                                        td Tako, Chicken, Tomato
+                                        td
+                                            span.label.label-primary Added
+                                        td Mario Przasd
+                                        td London,Down street,82
+                                        td $ 38
+                                        td 2016/10/25
+                                    tr
+                                        td 2
+                                        td 5
+                                        td Pizza, Patric star, Sponge
+                                        td
+                                            span.label.label-success Finished
+                                        td Hagrid the Forester
+                                        td Paris, Christelle rue,82
+                                        td $ 45
+                                        td 2016/10/24
+                                    tr
+                                        td 3
+                                        td 4
+                                        td Jelly, Cream, asdsad
+                                        td
+                                            span.label.label-danger Rejected
+                                        td None
+                                        td Nice,Roi rue,289
+                                        td $ 23
+                                        td 2016/10/26
+                                    tr
+                                        td 1
+                                        td 2
+                                        td Tako, Chicken, Tomato
+                                        td
+                                            span.label.label-primary Added
+                                        td Mario Przasd
+                                        td London,Down street,82
+                                        td $ 38
+                                        td 2016/10/25
+                                    tr
+                                        td 2
+                                        td 5
+                                        td Pizza, Patric star, Sponge
+                                        td
+                                            span.label.label-success Finished
+                                        td Hagrid the Forester
+                                        td Paris, Christelle rue,82
+                                        td $ 45
+                                        td 2016/10/24
+                                    tr
+                                        td 3
+                                        td 4
+                                        td Jelly, Cream, asdsad
+                                        td
+                                            span.label.label-danger Rejected
+                                        td None
+                                        td Nice,Roi rue,289
+                                        td $ 23
+                                        td 2016/10/26
+                                    tr
+                                        td 1
+                                        td 2
+                                        td Tako, Chicken, Tomato
+                                        td
+                                            span.label.label-primary Added
+                                        td Mario Przasd
+                                        td London,Down street,82
+                                        td $ 38
+                                        td 2016/10/25
+                                    tr
+                                        td 2
+                                        td 5
+                                        td Pizza, Patric star, Sponge
+                                        td
+                                            span.label.label-success Finished
+                                        td Hagrid the Forester
+                                        td Paris, Christelle rue,82
+                                        td $ 45
+                                        td 2016/10/24
+                                    tr
+                                        td 3
+                                        td 4
+                                        td Jelly, Cream, asdsad
+                                        td
+                                            span.label.label-danger Rejected
+                                        td None
+                                        td Nice,Roi rue,289
+                                        td $ 23
+                                        td 2016/10/26
+                                    tr
+                                        td 1
+                                        td 2
+                                        td Tako, Chicken, Tomato
+                                        td
+                                            span.label.label-primary Added
+                                        td Mario Przasd
+                                        td London,Down street,82
+                                        td $ 38
+                                        td 2016/10/25
+                                    tr
+                                        td 2
+                                        td 5
+                                        td Pizza, Patric star, Sponge
+                                        td
+                                            span.label.label-success Finished
+                                        td Hagrid the Forester
+                                        td Paris, Christelle rue,82
+                                        td $ 45
+                                        td 2016/10/24
+                                    tr
+                                        td 3
+                                        td 4
+                                        td Jelly, Cream, asdsad
+                                        td
+                                            span.label.label-danger Rejected
+                                        td None
+                                        td Nice,Roi rue,289
+                                        td $ 23
+                                        td 2016/10/26

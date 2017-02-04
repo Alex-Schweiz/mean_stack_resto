@@ -1,0 +1,57 @@
+#sidebar-menu.main_menu_side.hidden-print.main_menu
+    .menu_section
+        h3 General
+        ul.nav.side-menu
+            li
+                a(href='/admin')
+                    i.fa.fa-home
+                    |  Dashboard
+            li
+                a
+                    i.fa.fa-briefcase
+                    |  Stuff
+                    span.fa.fa-chevron-down
+                ul.nav.child_menu
+                    li
+                        a(href='/admin/jobs') Jobs
+                    li
+                        a(href='/admin/employees') Employees
+            li
+                a(href='/admin/clients')
+                    i.fa.fa-user
+                    |  Clients
+            li
+                a(href='/admin/deliveries')
+                    i.fa.fa-gift
+                    |  Deliveries
+            li
+                a(href='/admin/suppliers')
+                    i.fa.fa-car
+                    |  Suppliers
+            li
+                a
+                    i.fa.fa-cutlery
+                    | Food
+                    span.fa.fa-chevron-down
+                ul.nav.child_menu
+                    li
+                        a(href='/admin/menu') Menu
+                    li
+                        a(href='/admin/categories') Categories
+                    li
+                        a(href='/admin/storage') Storage
+    .menu_section
+        h3 Owner pages
+        ul.nav.side-menu
+            li
+                a(href='/admin/reports')
+                    i.fa.fa-file-o
+                    |  Reports
+            li
+                a(href='/admin/users')
+                    i.fa.fa-users
+                    |  Users
+            li
+                a(href='/admin/roles')
+                    i.fa.fa-tasks
+                    |  Roles

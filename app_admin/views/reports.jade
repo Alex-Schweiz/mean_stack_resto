@@ -1,0 +1,143 @@
+extends layouts/main
+
+block content
+    .container.body
+        .main_container
+            .col-md-3.left_col
+                .left_col.scroll-view
+                    .navbar.nav_title
+                        a.site_title(href='/admin')
+                            i.fa.fa-asterisk
+                            span Resto Admin
+                    .clearfix
+                    // menu profile quick info
+                    .profile
+                        .profile_pic
+                            img.img-circle.profile_img(src='images/img.jpg', alt='...')
+                        .profile_info
+                            span Welcome,
+                            h2 John Doe
+                    // /menu profile quick info
+                    br
+                    // sidebar menu
+                    include includes/navigation
+            // top navigation
+            .top_nav
+                .nav_menu
+                    nav
+                        .nav.toggle
+                            a#menu_toggle
+                                i.fa.fa-bars
+            // page content
+            .right_col(role='main')
+                div
+                    // Content goes here
+                    .page-title
+                        .title_left
+                            h3 Reports
+                    .clearfix
+                    .row
+                        .col-md-6
+                            .clearfix
+                        .col-md-12
+                            table.table.table-bordered
+                                thead
+                                    tr
+                                        th Year
+                                        th Month
+                                        th Revenue
+                                        th Delivery
+                                        th Restaurant
+                                        th Avarage cheque
+                                tbody
+                                    tr
+                                        td 2014
+                                        td January
+                                        td $35 000
+                                        td $12 000
+                                        td $23 000
+                                        td $35.75
+                                    tr
+                                        td 2014
+                                        td february
+                                        td $32 000
+                                        td $12 000
+                                        td $20 000
+                                        td $33.23
+                                    tr
+                                        td 2014
+                                        td March
+                                        td $38 000
+                                        td $12 000
+                                        td $25 000
+                                        td $37.55
+                                    tr
+                                        td 2014
+                                        td April
+                                        td $30 000
+                                        td $12 000
+                                        td $18 000
+                                        td $31.85
+                                    tr
+                                        td 2014
+                                        td february
+                                        td $32 000
+                                        td $12 000
+                                        td $20 000
+                                        td $33.23
+                                    tr
+                                        td 2014
+                                        td March
+                                        td $38 000
+                                        td $12 000
+                                        td $25 000
+                                        td $37.55
+                                    tr
+                                        td 2014
+                                        td April
+                                        td $30 000
+                                        td $12 000
+                                        td $18 000
+                                        td $31.85
+                                    tr
+                                        td 2014
+                                        td february
+                                        td $32 000
+                                        td $12 000
+                                        td $20 000
+                                        td $33.23
+                                    tr
+                                        td 2014
+                                        td March
+                                        td $38 000
+                                        td $12 000
+                                        td $25 000
+                                        td $37.55
+                                    tr
+                                        td 2014
+                                        td April
+                                        td $30 000
+                                        td $12 000
+                                        td $18 000
+                                        td $31.85
+                                    tr
+                                        td 2014
+                                        td february
+                                        td $32 000
+                                        td $12 000
+                                        td $20 000
+                                        td $33.23
+                                    tr
+                                        td 2014
+                                        td March
+                                        td $38 000
+                                        td $12 000
+                                        td $25 000
+                                        td $37.55
+                                    tr
+                                        td 2014
+                                        td April
+                                        td $30 000
+                                        td $12 000
+                                        td $18 000
+                                        td $31.85
