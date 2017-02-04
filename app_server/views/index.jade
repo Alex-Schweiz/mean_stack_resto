@@ -9,13 +9,13 @@ html(lang='en')
                     ul.pull-right
                         li
                             span.fa.fa-map-marker
-                            | #{pageHeader.address}
+                            | #{generalInfo.address}
                         li
                             span.fa.fa-phone
-                            | #{pageHeader.tel}
+                            | #{generalInfo.tel}
                         li
                             span.fa.fa-clock-o
-                            | #{pageHeader.workingTime}
+                            | #{generalInfo.workingTime}
                 .row
                     img(src='img/logo.png', alt='logo')
                     nav.pull-right
@@ -42,7 +42,7 @@ html(lang='en')
         // Chef recommends
         section.section-chef
             .container
-                h2= pageHeader.chefRecommends
+                h2= generalInfo.chefRecommends
             .row
                 each dish in topDishes
                     .col-md-3.col-sm-6.col-xs-12
@@ -56,7 +56,7 @@ html(lang='en')
         // testimonials
         section.section-testimonials
             .container
-                h2= pageHeader.testimonialsTitle
+                h2= generalInfo.testimonialsTitle
                 img.img-responsive(src='img/homepage_mst.png', alt='')
                 .row
                     each testimonial in homeTestimonials
