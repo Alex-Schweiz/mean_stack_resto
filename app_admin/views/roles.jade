@@ -46,23 +46,8 @@ block content
                                         th Title
                                         th Description
                                 tbody
-                                    tr
-                                        th(scope='row') 1
-                                        td Admin
-                                        td Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                    tr
-                                        th(scope='row') 2
-                                        td Chef
-                                        td Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                    tr
-                                        th(scope='row') 3
-                                        td Cook
-                                        td Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, vitae!
-                                    tr
-                                        th(scope='row') 4
-                                        td Accountant
-                                        td Lorem ipsum dolor sit amet, consectetur adipisicing.
-                                    tr
-                                        th(scope='row') 4
-                                        td Temporary
-                                        td Lorem ipsum dolor sit amet, consectetur adipisicing.
+                                    each role in roles
+                                        tr
+                                            th= role.id
+                                            td= role.title
+                                            td= role.description

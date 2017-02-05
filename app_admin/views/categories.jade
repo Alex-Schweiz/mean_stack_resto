@@ -46,19 +46,8 @@ block content
                                         th Title
                                         th Description
                                 tbody
-                                    tr
-                                        th(scope='row') 1
-                                        td Appetizer
-                                        td Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                    tr
-                                        th(scope='row') 2
-                                        td Main Dish
-                                        td Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                    tr
-                                        th(scope='row') 3
-                                        td Desert
-                                        td Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, vitae!
-                                    tr
-                                        th(scope='row') 4
-                                        td beverages
-                                        td Lorem ipsum dolor sit amet, consectetur adipisicing.
+                                    each category in categories
+                                        tr
+                                            th= category.id
+                                            td= category.title
+                                            td= category.description

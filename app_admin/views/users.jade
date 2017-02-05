@@ -52,73 +52,15 @@ block content
                                         th Role
                                         th Birth date
                                 tbody
-                                    tr
-                                        td 1
-                                        td abcdas@mail.com
-                                        td
-                                            img.img-client(src='images/clients/client-1.jpg', alt='')
-                                        td user58a4sd54
-                                        td Johanne Mario
-                                        td 565944515
-                                        td Cook
-                                        td 1991/04/25
-                                    tr
-                                        td 2
-                                        td abcdas@mail.com
-                                        td
-                                            img.img-client(src='images/clients/client-2.jpg', alt='')
-                                        td user58a4sd54
-                                        td Johanne Mario
-                                        td 565944515
-                                        td Cook
-                                        td 1991/04/25
-                                    tr
-                                        td 3
-                                        td abcdas@mail.com
-                                        td
-                                            img.img-client(src='images/clients/client-3.jpg', alt='')
-                                        td user58a4sd54
-                                        td Johanne Mario
-                                        td 565944515
-                                        td Dishwasher
-                                        td 1991/04/25
-                                    tr
-                                        td 4
-                                        td abcdas@mail.com
-                                        td
-                                            img.img-client(src='images/clients/client-1.jpg', alt='')
-                                        td user58a4sd54
-                                        td Johanne Mario
-                                        td 565944515
-                                        td Chef
-                                        td 1991/04/25
-                                    tr
-                                        td 5
-                                        td abcdas@mail.com
-                                        td
-                                            img.img-client(src='images/clients/client-2.jpg', alt='')
-                                        td user58a4sd54
-                                        td Johanne Mario
-                                        td 565944515
-                                        td Cook
-                                        td 1991/04/25
-                                    tr
-                                        td 6
-                                        td abcdas@mail.com
-                                        td
-                                            img.img-client(src='images/clients/client-3.jpg', alt='')
-                                        td user58a4sd54
-                                        td Johanne Mario
-                                        td 565944515
-                                        td Cook
-                                        td 1991/04/25
-                                    tr
-                                        td 7
-                                        td abcdas@mail.com
-                                        td
-                                            img.img-client(src='images/clients/client-2.jpg', alt='')
-                                        td user58a4sd54
-                                        td Johanne Mario
-                                        td 565944515
-                                        td Cook
-                                        td 1991/04/25
+                                    each user in users
+                                        tr
+                                            td= user.id
+                                            td= user.email
+                                            td
+                                                img.img-client(src='#{user.photo}', alt='')
+                                            td= user.name
+                                            td= user.username
+                                            td= user.role
+                                            td= user.phone
+                                            td= user.address
+                                            td= user.birthdate

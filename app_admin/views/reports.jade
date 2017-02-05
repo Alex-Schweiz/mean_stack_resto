@@ -50,94 +50,11 @@ block content
                                         th Restaurant
                                         th Avarage cheque
                                 tbody
-                                    tr
-                                        td 2014
-                                        td January
-                                        td $35 000
-                                        td $12 000
-                                        td $23 000
-                                        td $35.75
-                                    tr
-                                        td 2014
-                                        td february
-                                        td $32 000
-                                        td $12 000
-                                        td $20 000
-                                        td $33.23
-                                    tr
-                                        td 2014
-                                        td March
-                                        td $38 000
-                                        td $12 000
-                                        td $25 000
-                                        td $37.55
-                                    tr
-                                        td 2014
-                                        td April
-                                        td $30 000
-                                        td $12 000
-                                        td $18 000
-                                        td $31.85
-                                    tr
-                                        td 2014
-                                        td february
-                                        td $32 000
-                                        td $12 000
-                                        td $20 000
-                                        td $33.23
-                                    tr
-                                        td 2014
-                                        td March
-                                        td $38 000
-                                        td $12 000
-                                        td $25 000
-                                        td $37.55
-                                    tr
-                                        td 2014
-                                        td April
-                                        td $30 000
-                                        td $12 000
-                                        td $18 000
-                                        td $31.85
-                                    tr
-                                        td 2014
-                                        td february
-                                        td $32 000
-                                        td $12 000
-                                        td $20 000
-                                        td $33.23
-                                    tr
-                                        td 2014
-                                        td March
-                                        td $38 000
-                                        td $12 000
-                                        td $25 000
-                                        td $37.55
-                                    tr
-                                        td 2014
-                                        td April
-                                        td $30 000
-                                        td $12 000
-                                        td $18 000
-                                        td $31.85
-                                    tr
-                                        td 2014
-                                        td february
-                                        td $32 000
-                                        td $12 000
-                                        td $20 000
-                                        td $33.23
-                                    tr
-                                        td 2014
-                                        td March
-                                        td $38 000
-                                        td $12 000
-                                        td $25 000
-                                        td $37.55
-                                    tr
-                                        td 2014
-                                        td April
-                                        td $30 000
-                                        td $12 000
-                                        td $18 000
-                                        td $31.85
+                                    each report in reports
+                                        tr
+                                            td= report.year
+                                            td= report.month
+                                            td= report.revenue
+                                            td= report.delivery
+                                            td= report.restaurant
+                                            td= report.avarageCheque

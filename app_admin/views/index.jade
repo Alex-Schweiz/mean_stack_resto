@@ -35,67 +35,27 @@ block content
                         h3 This Month
                 .clearfix
                 .row.top_tiles
-                    .animated.flipInY.col-lg-3.col-md-3.col-sm-6.col-xs-12
-                        .tile-stats
-                            .icon
-                                i.fa.fa-user
-                            .count 20
-                            h3 New users
-                            p Lorem ipsum psdea itgum rixt.
-                    .animated.flipInY.col-lg-3.col-md-3.col-sm-6.col-xs-12
-                        .tile-stats
-                            .icon
-                                i.fa.fa-gift
-                            .count 54
-                            h3 New Deliveries
-                            p Lorem ipsum psdea itgum rixt.
-                    .animated.flipInY.col-lg-3.col-md-3.col-sm-6.col-xs-12
-                        .tile-stats
-                            .icon
-                                i.fa.fa-dollar
-                            .count $24 589.12
-                            h3 Sales
-                            p Lorem ipsum psdea itgum rixt.
-                    .animated.flipInY.col-lg-3.col-md-3.col-sm-6.col-xs-12
-                        .tile-stats
-                            .icon
-                                i.fa.fa-internet-explorer
-                            .count 1 709
-                            h3 Site visitors
-                            p Lorem ipsum psdea itgum rixt.
+                    each month in monthStatistics
+                        .animated.flipInY.col-lg-3.col-md-3.col-sm-6.col-xs-12
+                            .tile-stats
+                                .icon
+                                    i(class='fa #{month.icon}')
+                                .count= month.number
+                                h3= month.title
+                                p= month.description
                 // This year statistics
                 .page-title
                     .title_left
                         h3 This Year
                 .clearfix
                 .row.top_tiles
-                    .animated.flipInY.col-lg-3.col-md-3.col-sm-6.col-xs-12
-                        .tile-stats
-                            .icon
-                                i.fa.fa-user
-                            .count 785
-                            h3 New users
-                            p Lorem ipsum psdea itgum rixt.
-                    .animated.flipInY.col-lg-3.col-md-3.col-sm-6.col-xs-12
-                        .tile-stats
-                            .icon
-                                i.fa.fa-gift
-                            .count 1 347
-                            h3 New Deliveries
-                            p Lorem ipsum psdea itgum rixt.
-                    .animated.flipInY.col-lg-3.col-md-3.col-sm-6.col-xs-12
-                        .tile-stats
-                            .icon
-                                i.fa.fa-dollar
-                            .count $392 142.57
-                            h3 Sales
-                            p Lorem ipsum psdea itgum rixt.
-                    .animated.flipInY.col-lg-3.col-md-3.col-sm-6.col-xs-12
-                        .tile-stats
-                            .icon
-                                i.fa.fa-internet-explorer
-                            .count 69 145
-                            h3 Site visitors
-                            p Lorem ipsum psdea itgum rixt.
+                    each year in yearStatistics
+                        .animated.flipInY.col-lg-3.col-md-3.col-sm-6.col-xs-12
+                            .tile-stats
+                                .icon
+                                    i(class='fa #{year.icon}')
+                                .count= year.number
+                                h3= year.title
+                                p= year.description
                 .demo-container(style='height:290px; margin-top: 150px;')
                     #placeholder33x.demo-placeholder

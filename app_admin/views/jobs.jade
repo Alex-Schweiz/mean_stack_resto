@@ -43,65 +43,17 @@ block content
                                 thead
                                     tr
                                         th id
-                                        th Title
+                                        th position
                                         th Description
                                         th Requirements
                                         th Salary
                                         th Comments
                                 tbody
-                                    tr
-                                        th(scope='row') 1
-                                        td Chef
-                                        td Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                        td Lorem ipsum dolor sit amet, consectetur adipisicing.
-                                        td $ 1300
-                                        td -
-                                    tr
-                                        th(scope='row') 2
-                                        td Cook
-                                        td Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                        td Lorem ipsum dolor sit amet, consectetur adipisicing.
-                                        td $ 900
-                                        td -
-                                    tr
-                                        th(scope='row') 3
-                                        td Dishwasher
-                                        td Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                        td Lorem ipsum dolor sit amet, consectetur adipisicing.
-                                        td $ 450
-                                        td -
-                                    tr
-                                        th(scope='row') 4
-                                        td Dishwasher
-                                        td Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                        td Lorem ipsum dolor sit amet, consectetur adipisicing.
-                                        td $ 450
-                                        td -
-                                    tr
-                                        th(scope='row') 5
-                                        td Dishwasher
-                                        td Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                        td Lorem ipsum dolor sit amet, consectetur adipisicing.
-                                        td $ 450
-                                        td -
-                                    tr
-                                        th(scope='row') 6
-                                        td Dishwasher
-                                        td Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                        td Lorem ipsum dolor sit amet, consectetur adipisicing.
-                                        td $ 450
-                                        td -
-                                    tr
-                                        th(scope='row') 7
-                                        td Dishwasher
-                                        td Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                        td Lorem ipsum dolor sit amet, consectetur adipisicing.
-                                        td $ 450
-                                        td -
-                                    tr
-                                        th(scope='row') 8
-                                        td Waiter
-                                        td Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                        td Lorem ipsum dolor sit amet, consectetur adipisicing.
-                                        td $ 600
-                                        td -
+                                    each job in jobs
+                                        tr
+                                            th= job.id
+                                            td= job.position
+                                            td= job.description
+                                            td= job.requirements
+                                            td= job.salary
+                                            td= job.comments

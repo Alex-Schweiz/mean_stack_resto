@@ -34,78 +34,13 @@ block content
                     .page-title
                         .title_left
                             h3 Employees
-                    .clearfix
+                    .clearfix.row
                     .section-employees
-                        .col-sm-3
-                            .employee-card
-                                img.img-responsive(src='images/team-1.jpg', alt='')
-                                a(href='#')
-                                    h4 Jose Maurinho
-                                h5 Chef
-                                p
-                                    | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium asperiores ipsa laboriosam modi,
-                                    | nulla quisquam tempora! Est fuga recusandae ullam.
-                        .col-sm-3
-                            .employee-card
-                                img.img-responsive(src='images/team-3.jpg', alt='')
-                                a(href='#')
-                                    h4 Tony Ahorna
-                                h5 Cook
-                                p
-                                    | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium asperiores ipsa laboriosam modi,
-                                    | nulla quisquam tempora! Est fuga recusandae ullam.
-                        .col-sm-3
-                            .employee-card
-                                img.img-responsive(src='images/team-4.jpg', alt='')
-                                a(href='#')
-                                    h4 Ann Steward
-                                h5 Dishwasher
-                                p
-                                    | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium asperiores ipsa laboriosam modi,
-                                    | nulla quisquam tempora! Est fuga recusandae ullam.
-                        .col-sm-3
-                            .employee-card
-                                img.img-responsive(src='images/team-6.jpg', alt='')
-                                a(href='#')
-                                    h4 Mauricio Lago
-                                h5 Cook
-                                p
-                                    | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium asperiores ipsa laboriosam modi,
-                                    | nulla quisquam tempora! Est fuga recusandae ullam.
-                        .clearfix
-                        .col-sm-3
-                            .employee-card
-                                img.img-responsive(src='images/team-7.jpg', alt='')
-                                a(href='#')
-                                    h4 Caroline Dantes
-                                h5 Waiter
-                                p
-                                    | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium asperiores ipsa laboriosam modi,
-                                    | nulla quisquam tempora! Est fuga recusandae ullam.
-                        .col-sm-3
-                            .employee-card
-                                img.img-responsive(src='images/team-3.jpg', alt='')
-                                a(href='#')
-                                    h4 Amedeo Lacrice
-                                h5 Waiter
-                                p
-                                    | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium asperiores ipsa laboriosam modi,
-                                    | nulla quisquam tempora! Est fuga recusandae ullam.
-                        .col-sm-3
-                            .employee-card
-                                img.img-responsive(src='images/team-1.jpg', alt='')
-                                a(href='#')
-                                    h4  Florian Weber
-                                h5 Kniefer
-                                p
-                                    | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium asperiores ipsa laboriosam modi,
-                                    | nulla quisquam tempora! Est fuga recusandae ullam.
-                        .col-sm-3
-                            .employee-card
-                                img.img-responsive(src='images/team-4.jpg', alt='')
-                                a(href='#')
-                                    h4 Rosa Vincetti
-                                h5 Dishwasher
-                                p
-                                    | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium asperiores ipsa laboriosam modi,
-                                    | nulla quisquam tempora! Est fuga recusandae ullam.
+                        each employee in employees
+                            .col-md-3
+                                .employee-card
+                                    img.img-responsive(src='#{employee.image}', alt='')
+                                    a(href='#')
+                                        h4= employee.name
+                                    h5= employee.position
+                                    p= employee.description
