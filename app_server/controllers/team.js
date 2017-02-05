@@ -72,14 +72,14 @@ module.exports.index = function(req, res){
             name: 'Alberto Bernanzo',
             image: 'img/team/team-1.jpg',
             link: '/team/team-member',
-            position: 'Chef\'s assistant',
+            position: 'Chef assistant',
             description: 'While our founder is our main chef, he’s also a part of our family! Managing our menu, interior, and ' +
             'finances, this man still manages to rock his major position – cooking a majority of our restaurant dishes!'
         },{
             name: 'Cortez Fernandez',
             image: 'img/team/team-6.jpg',
             link: '/team/team-member',
-            position: 'Chef\'s assistant',
+            position: 'Chef assistant',
             description: 'While our founder is our main chef, he’s also a part of our family! Managing our menu, interior, and ' +
             'finances, this man still manages to rock his major position – cooking a majority of our restaurant dishes!'
         },{

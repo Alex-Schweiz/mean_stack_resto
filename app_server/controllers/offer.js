@@ -57,15 +57,15 @@ module.exports.index = function(req, res){
         }],
         offers: [{
             name:'Mexican lunch',
-            price:'$20',
+            price:'20',
             specialItems:['Mild Guacamole','Frutas Guacamole','Rojo Guacamole','Ceviche Peruano']
         },{
             name:'Burito lunch',
-            price:'$18',
+            price:'18',
             specialItems:['Hamachi','Toro Taquitos','Sopa de Tortilla','Ensalada de Jicama']
         },{
             name:'Tokito lunch',
-            price:'$22',
+            price:'22',
             specialItems:['Quesadilla de Camaron','Quesadilla de Tuetano','Hongos & Nopales','Polo Taco']
         }],
         offerTestimonials: {
