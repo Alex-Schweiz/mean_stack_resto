@@ -343,14 +343,16 @@ module.exports.barbacoa = function(req, res){
         }],
         oneDish: {
             name: 'Authentic Mexican Barbacoa',
-            description: 'As it turns out, not everyone loves their guacamole the same! In fact, this mild version' +
-                            ' of a guacamole dish is proven to be our yet most popular main course dish! It’s milder ' +
-                        'than not, lemon spruced and not too much spicy to become hot!',
             image: '../../img/dish/menu-item-1-1-1170x679.jpg',
+            link: '/menu/appetizer/barbacoa',
+            category: 'Appetizer',
             price: '$5.45',
             weight: '650g',
             ingredients: ['200g of Black Angus steak','Eggs','Lemon','Rice','Salmon','Salt','Thyme','Water'],
-            calories: '650'
+            calories: '650',
+            description: 'As it turns out, not everyone loves their guacamole the same! In fact, this mild version' +
+            ' of a guacamole dish is proven to be our yet most popular main course dish! It’s milder ' +
+            'than not, lemon spruced and not too much spicy to become hot!'
         }
     });
 };

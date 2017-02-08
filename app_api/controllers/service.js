@@ -1,39 +1,39 @@
 var mongoose = require('mongoose');
-var teammem = mongoose.model('Team');
+var serviceItem = mongoose.model('Service');
 
 var sendJsonResponse = function(res, status, content) {
     res.status(status);
     res.json(content);
 };
 
-module.exports.teamsList = function(req, res) {
+module.exports.servicesList = function(req, res) {
     if (req.params) {
-        teammem.find(req.params)
-            .exec(function(err, team) {
-                if (!team) {
+        serviceItem.find(req.params)
+            .exec(function(err, service) {
+                if (!service) {
                     sendJsonResponse(res, 404, {
-                        "message": "Team id not found"
+                        "message": "Service id not found"
                     });
                     return;
                 } else if (err) {
                     sendJsonResponse(res, 404, err);
                     return;
                 }
-                sendJsonResponse(res, 200, team);
+                sendJsonResponse(res, 200, service);
             });
     } else {
         sendJsonResponse(res, 404, {
-            "message": "No team id in request"
+            "message": "No service id in request"
         });
     }
 };
 
-module.exports.teamsCreate = function(req, res) {
-    teammem.create({
+
+module.exports.servicesCreate = function(req, res) {
+    serviceItem.create({
         name: req.body.name,
         image: req.body.image,
         link: req.body.link,
-        position: req.body.position,
         description: req.body.description
     }, function(err, offer) {
         if (err) {
@@ -44,58 +44,58 @@ module.exports.teamsCreate = function(req, res) {
     });
 };
 
-module.exports.teamsReadOne = function(req, res) {
-    if (req.params && req.params.teamid) {
-        teammem.findById(req.params.teamid)
-                .exec(function(err, team) {
-                    if (!team) {
+
+module.exports.servicesReadOne = function(req, res) {
+    if (req.params && req.params.serviceid) {
+        serviceItem.findById(req.params.serviceid)
+                .exec(function(err, service) {
+                    if (!service) {
                         sendJsonResponse(res, 404, {
-                            "message": "Team id not found"
+                            "message": "Service id not found"
                         });
                         return;
                     } else if (err) {
                         sendJsonResponse(res, 404, err);
                         return;
                     }
-                    sendJsonResponse(res, 200, team);
+                    sendJsonResponse(res, 200, service);
                 });
         } else {
             sendJsonResponse(res, 404, {
-                "message": "No team id in request"
+                "message": "No service id in request"
             });
         }
 };
 
 
-module.exports.teamsUpdateOne = function(req, res) {
-    if (!req.params.teamid) {
+module.exports.servicesUpdateOne = function(req, res) {
+    if (!req.params.serviceid) {
         sendJsonResponse(res, 404, {
-            "message": "Not found, team id is required"
+            "message": "Not found, service id is required"
         });
         return;
     }
-    teammem.findById(req.params.teamid)
+    serviceItem.findById(req.params.serviceid)
         .exec(
-            function(err, team) {
-                if (!team) {
+            function(err, service) {
+                if (!service) {
                     sendJsonResponse(res, 404, {
-                        "message": "team id not found"
+                        "message": "service id not found"
                     });
                     return;
                 } else if (err) {
                     sendJsonResponse(res, 400, err);
                     return;
                 }
-                team.name = req.body.name;
-                team.image = req.body.image;
-                team.link = req.body.link;
-                team.position = req.body.position;
-                team.description = req.body.description;
-                team.save(function(err, team) {
+                service.name = req.body.name;
+                service.image = req.body.image;
+                service.link = req.body.link;
+                service.description = req.body.description;
+                service.save(function(err, service) {
                     if (err) {
                         sendJsonResponse(res, 404, err);
                     } else {
-                        sendJsonResponse(res, 200, team);
+                        sendJsonResponse(res, 200, service);
                     }
                 });
             }
@@ -103,12 +103,12 @@ module.exports.teamsUpdateOne = function(req, res) {
 };
 
 
-module.exports.teamsDeleteOne = function(req, res) {
-    var teamid = req.params.teamid;
-    if (teamid) {
-        teammem.findByIdAndRemove(teamid)
+module.exports.servicesDeleteOne = function(req, res) {
+    var serviceid = req.params.serviceid;
+    if (serviceid) {
+        serviceItem.findByIdAndRemove(serviceid)
             .exec(
-                function(err, team) {
+                function(err, service) {
                     if (err) {
                         sendJsonResponse(res, 404, err);
                         return;
@@ -118,7 +118,7 @@ module.exports.teamsDeleteOne = function(req, res) {
             );
     } else {
         sendJsonResponse(res, 404, {
-            "message": "No team id"
+            "message": "No service id"
         });
     }
 };

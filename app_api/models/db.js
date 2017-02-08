@@ -1,6 +1,6 @@
 var mongoose = require( 'mongoose' );
 var gracefulShutdown;
-var dbURI = 'mongodb://localhost/resto';
+var dbURI = 'mongodb://localhost/test1';
 
 
 mongoose.connect(dbURI);
@@ -45,3 +45,4 @@ process.on('SIGTERM', function() {
 require('./offers');
 require('./teams');
 require('./services');
+require('./menu');

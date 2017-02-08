@@ -1,40 +1,39 @@
 var mongoose = require('mongoose');
-var teammem = mongoose.model('Team');
+var offerItem = mongoose.model('Offer');
 
 var sendJsonResponse = function(res, status, content) {
     res.status(status);
     res.json(content);
 };
 
-module.exports.teamsList = function(req, res) {
+module.exports.offersList = function(req, res) {
     if (req.params) {
-        teammem.find(req.params)
-            .exec(function(err, team) {
-                if (!team) {
+        offerItem.find(req.params)
+            .exec(function(err, offer) {
+                if (!offer) {
                     sendJsonResponse(res, 404, {
-                        "message": "Team id not found"
+                        "message": "Offer Id not found"
                     });
                     return;
                 } else if (err) {
                     sendJsonResponse(res, 404, err);
                     return;
                 }
-                sendJsonResponse(res, 200, team);
+                sendJsonResponse(res, 200, offer);
             });
     } else {
         sendJsonResponse(res, 404, {
-            "message": "No team id in request"
+            "message": "No offer id in request"
         });
     }
 };
 
-module.exports.teamsCreate = function(req, res) {
-    teammem.create({
+
+module.exports.offersCreate = function(req, res) {
+    offerItem.create({
         name: req.body.name,
-        image: req.body.image,
-        link: req.body.link,
-        position: req.body.position,
-        description: req.body.description
+        price: req.body.price,
+        specialItems: req.body.specialItems.split(",")
     }, function(err, offer) {
         if (err) {
             sendJsonResponse(res, 400, err);
@@ -44,58 +43,57 @@ module.exports.teamsCreate = function(req, res) {
     });
 };
 
-module.exports.teamsReadOne = function(req, res) {
-    if (req.params && req.params.teamid) {
-        teammem.findById(req.params.teamid)
-                .exec(function(err, team) {
-                    if (!team) {
+
+module.exports.offersReadOne = function(req, res) {
+    if (req.params && req.params.offerid) {
+        offerItem.findById(req.params.offerid)
+                .exec(function(err, offer) {
+                    if (!offer) {
                         sendJsonResponse(res, 404, {
-                            "message": "Team id not found"
+                            "message": "Offer Id not found"
                         });
                         return;
                     } else if (err) {
                         sendJsonResponse(res, 404, err);
                         return;
                     }
-                    sendJsonResponse(res, 200, team);
+                    sendJsonResponse(res, 200, offer);
                 });
         } else {
             sendJsonResponse(res, 404, {
-                "message": "No team id in request"
+                "message": "No offer id in request"
             });
         }
 };
 
 
-module.exports.teamsUpdateOne = function(req, res) {
-    if (!req.params.teamid) {
+module.exports.offersUpdateOne = function(req, res) {
+    if (!req.params.offerid) {
         sendJsonResponse(res, 404, {
-            "message": "Not found, team id is required"
+            "message": "Not found, offerid is required"
         });
         return;
     }
-    teammem.findById(req.params.teamid)
+    offerItem.findById(req.params.offerid)
         .exec(
-            function(err, team) {
-                if (!team) {
+            function(err, offer) {
+                if (!offer) {
                     sendJsonResponse(res, 404, {
-                        "message": "team id not found"
+                        "message": "offer id not found"
                     });
                     return;
                 } else if (err) {
                     sendJsonResponse(res, 400, err);
                     return;
                 }
-                team.name = req.body.name;
-                team.image = req.body.image;
-                team.link = req.body.link;
-                team.position = req.body.position;
-                team.description = req.body.description;
-                team.save(function(err, team) {
+                offer.name = req.body.name;
+                offer.price = req.body.price;
+                offer.specialItems = req.body.specialItems.split(",");
+                offer.save(function(err, offer) {
                     if (err) {
                         sendJsonResponse(res, 404, err);
                     } else {
-                        sendJsonResponse(res, 200, team);
+                        sendJsonResponse(res, 200, offer);
                     }
                 });
             }
@@ -103,12 +101,12 @@ module.exports.teamsUpdateOne = function(req, res) {
 };
 
 
-module.exports.teamsDeleteOne = function(req, res) {
-    var teamid = req.params.teamid;
-    if (teamid) {
-        teammem.findByIdAndRemove(teamid)
+module.exports.offersDeleteOne = function(req, res) {
+    var offerid = req.params.offerid;
+    if (offerid) {
+        offerItem.findByIdAndRemove(offerid)
             .exec(
-                function(err, team) {
+                function(err, offer) {
                     if (err) {
                         sendJsonResponse(res, 404, err);
                         return;
@@ -118,7 +116,7 @@ module.exports.teamsDeleteOne = function(req, res) {
             );
     } else {
         sendJsonResponse(res, 404, {
-            "message": "No team id"
+            "message": "No offer id"
         });
     }
 };
