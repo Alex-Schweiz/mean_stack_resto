@@ -30,5 +30,5 @@ block content
                     .col-md-4
                         a(href='#{service.link}')
                             img.img-responsive(src='#{service.image}', alt='')
-                        a(href='#{service.link}') Catering
+                        a(href='#{service.link}')= service.name
                         p= service.description

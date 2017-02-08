@@ -58,21 +58,32 @@ module.exports.index = function(req, res){
         allServicesInfo: [{
             link: '/services/school-menu',
             image: 'img/services-icon-1-1.png',
+            name:'Catering',
             description: 'We offer a wide range of catering for any type of a casual or a festive event – from a wedding to a birthday, all enhanced with authentic Mexican food!'
-        },{link: '/services/school-menu',
+        },{
+            link: '/services/school-menu',
             image: 'img/services-icon-2-1.png',
+            name:'Waiter rental',
             description: 'We offer a wide range of catering for any type of a casual or a festive event – from a wedding to a birthday, all enhanced with authentic Mexican food!'
-        },{link: '/services/school-menu',
+        },{
+            link: '/services/school-menu',
             image: 'img/services-icon-3-1.png',
+            name:'Business catering',
             description: 'We offer a wide range of catering for any type of a casual or a festive event – from a wedding to a birthday, all enhanced with authentic Mexican food!'
-        },{link: '/services/school-menu',
+        },{
+            link: '/services/school-menu',
             image: 'img/services-icon-4-1.png',
+            name:'School menus',
             description: 'We offer a wide range of catering for any type of a casual or a festive event – from a wedding to a birthday, all enhanced with authentic Mexican food!'
-        },{link: '/services/school-menu',
+        },{
+            link: '/services/school-menu',
             image: 'img/services-icon-5-1.png',
+            name:'Party consulting',
             description: 'We are not afraid to lend you with our waiters, whichever food-related event you’ll be using them at… They will heighten a customer service up to a notch!'
-        },{link: '/services/school-menu',
+        },{
+            link: '/services/school-menu',
             image: 'img/services-icon-6-1.png',
+            name:'Diet menu',
             description: 'We offer a wide range of catering for any type of a casual or a festive event – from a wedding to a birthday, all enhanced with authentic Mexican food!'
         }]
     });
