@@ -5,7 +5,7 @@ var jobSchema = new mongoose.Schema({
     description: {type: String, required: true},
     requirements: {type: String, required: true},
     salary: {type: Number, required: true},
-    comments: {type: String, required: true}
+    comments: {type: String, required: false}
 });
 
 mongoose.model('Job', jobSchema,'jobs');

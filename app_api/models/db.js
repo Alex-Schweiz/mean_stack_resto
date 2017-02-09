@@ -53,3 +53,7 @@ require('./deliverys');
 require('./category');
 require('./role');
 require('./job');
+require('./report');
+require('./storage');
+require('./supplier');
+require('./user');

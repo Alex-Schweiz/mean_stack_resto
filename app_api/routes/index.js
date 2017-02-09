@@ -10,6 +10,10 @@ var ctrlDelivery = require('../controllers/deliverys');
 var ctrlCategory = require('../controllers/category');
 var ctrlRole = require('../controllers/role');
 var ctrlJob = require('../controllers/job');
+var ctrlReport = require('../controllers/report');
+var ctrlStorage = require('../controllers/storage');
+var ctrlSupplier = require('../controllers/supplier');
+var ctrlUser = require('../controllers/user');
 
 // Offers
 router.get('/offers', ctrlOffers.offersList);
@@ -74,6 +78,34 @@ router.post('/job', ctrlJob.jobsCreate);
 router.get('/job/:jobid', ctrlJob.jobsReadOne);
 router.put('/job/:jobid', ctrlJob.jobsUpdateOne);
 router.delete('/job/:jobid', ctrlJob.jobsDeleteOne);
+
+// Reports
+router.get('/report', ctrlReport.reportsList);
+router.post('/report', ctrlReport.reportsCreate);
+router.get('/report/:reportid', ctrlReport.reportsReadOne);
+router.put('/report/:reportid', ctrlReport.reportsUpdateOne);
+router.delete('/report/:reportid', ctrlReport.reportsDeleteOne);
+
+// Storage
+router.get('/storage', ctrlStorage.storagesList);
+router.post('/storage', ctrlStorage.storagesCreate);
+router.get('/storage/:storageid', ctrlStorage.storagesReadOne);
+router.put('/storage/:storageid', ctrlStorage.storagesUpdateOne);
+router.delete('/storage/:storageid', ctrlStorage.storagesDeleteOne);
+
+// Supplier
+router.get('/supplier', ctrlSupplier.suppliersList);
+router.post('/supplier', ctrlSupplier.suppliersCreate);
+router.get('/supplier/:supplierid', ctrlSupplier.suppliersReadOne);
+router.put('/supplier/:supplierid', ctrlSupplier.suppliersUpdateOne);
+router.delete('/supplier/:supplierid', ctrlSupplier.suppliersDeleteOne);
+
+// User
+router.get('/user', ctrlUser.usersList);
+router.post('/user', ctrlUser.usersCreate);
+router.get('/user/:userid', ctrlUser.usersReadOne);
+router.put('/user/:userid', ctrlUser.usersUpdateOne);
+router.delete('/user/:userid', ctrlUser.usersDeleteOne);
 
 
 module.exports = router;
