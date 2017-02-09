@@ -4,6 +4,12 @@ var ctrlTeams = require('../controllers/team');
 var ctrlOffers = require('../controllers/offer');
 var ctrlServices = require('../controllers/service');
 var ctrlMenus = require('../controllers/menu');
+//Admin Controllers
+var ctrlClients = require('../controllers/client');
+var ctrlDelivery = require('../controllers/deliverys');
+var ctrlCategory = require('../controllers/category');
+var ctrlRole = require('../controllers/role');
+var ctrlJob = require('../controllers/job');
 
 // Offers
 router.get('/offers', ctrlOffers.offersList);
@@ -32,6 +38,42 @@ router.post('/menu', ctrlMenus.menusCreate);
 router.get('/menu/:menuid', ctrlMenus.menusReadOne);
 router.put('/menu/:menuid', ctrlMenus.menusUpdateOne);
 router.delete('/menu/:menuid', ctrlMenus.menusDeleteOne);
+
+//Admin Section
+// Clients
+router.get('/client', ctrlClients.clientsList);
+router.post('/client', ctrlClients.clientsCreate);
+router.get('/client/:clientid', ctrlClients.clientsReadOne);
+router.put('/client/:clientid', ctrlClients.clientsUpdateOne);
+router.delete('/client/:clientid', ctrlClients.clientsDeleteOne);
+
+// Deliveries
+router.get('/delivery', ctrlDelivery.deliverysList);
+router.post('/delivery', ctrlDelivery.deliverysCreate);
+router.get('/delivery/:deliveryid', ctrlDelivery.deliverysReadOne);
+router.put('/delivery/:deliveryid', ctrlDelivery.deliverysUpdateOne);
+router.delete('/delivery/:deliveryid', ctrlDelivery.deliverysDeleteOne);
+
+// Categories
+router.get('/category', ctrlCategory.categorysList);
+router.post('/category', ctrlCategory.categorysCreate);
+router.get('/category/:categoryid', ctrlCategory.categorysReadOne);
+router.put('/category/:categoryid', ctrlCategory.categorysUpdateOne);
+router.delete('/category/:categoryid', ctrlCategory.categorysDeleteOne);
+
+// Roles
+router.get('/role', ctrlRole.rolesList);
+router.post('/role', ctrlRole.rolesCreate);
+router.get('/role/:roleid', ctrlRole.rolesReadOne);
+router.put('/role/:roleid', ctrlRole.rolesUpdateOne);
+router.delete('/role/:roleid', ctrlRole.rolesDeleteOne);
+
+// Jobs
+router.get('/job', ctrlJob.jobsList);
+router.post('/job', ctrlJob.jobsCreate);
+router.get('/job/:jobid', ctrlJob.jobsReadOne);
+router.put('/job/:jobid', ctrlJob.jobsUpdateOne);
+router.delete('/job/:jobid', ctrlJob.jobsDeleteOne);
 
 
 module.exports = router;

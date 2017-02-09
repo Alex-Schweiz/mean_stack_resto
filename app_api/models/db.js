@@ -46,3 +46,10 @@ require('./offers');
 require('./teams');
 require('./services');
 require('./menu');
+
+//Require Admin DBs
+require('./client');
+require('./deliverys');
+require('./category');
+require('./role');
+require('./job');
