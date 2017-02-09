@@ -3,6 +3,7 @@ var router = express.Router();
 var ctrlHome = require('../controllers/home');
 var ctrlService = require('../controllers/service');
 var ctrlTeam = require('../controllers/team');
+var ctrlTeamMember = require('../controllers/team-member');
 var ctrlOffer = require('../controllers/offer');
 var ctrlMenu = require('../controllers/menu');
 
@@ -15,7 +16,7 @@ router.get('/services/school-menu',ctrlService.schoolMenu);
 
 /* Team pages */
 router.get('/team',ctrlTeam.index);
-router.get('/team/team-member',ctrlTeam.teamMember);
+router.get('/team/:teamid', ctrlTeamMember.teamMember);
 
 /* Offer pages */
 router.get('/offers',ctrlOffer.index);

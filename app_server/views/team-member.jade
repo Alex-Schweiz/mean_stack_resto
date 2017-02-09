@@ -48,7 +48,7 @@ html
                     li
                         a(href='/team') Team
                     li.active
-                        a(href='/team/team-member') Team Member
+                        a(href='/team/#{teamMember._id}')= teamMember.name
         // Team Member
         section.section-team-member
             .container

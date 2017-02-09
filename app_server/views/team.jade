@@ -19,10 +19,11 @@ block content
     section.section-team-body
         .container
             .row
+                .error= message
                 each member in teamMember
                     .col-sm-3
-                        img.img-responsive(src='#{member.image}', alt='')
-                        a(href='#{member.link}')
+                        img.img-responsive(src='#{member.image}', alt='#{member.name}')
+                        a(href='/team/#{member._id}')
                             h3= member.name
                         p.position= member.position
                         p.description= member.description
