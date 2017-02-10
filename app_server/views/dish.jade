@@ -33,7 +33,7 @@ html
                             span.fa.fa-clock-o
                             | #{generalInfo.workingTime}
                 .row
-                    img(src='../../img/logo.png', alt='logo')
+                    img(src='/../img/logo.png', alt='logo')
                     nav.pull-right
                         ul.menu
                             each nav in navMenu
@@ -47,10 +47,8 @@ html
                         a(href='/') Home
                     li
                         a(href='/menu') Menu
-                    li
-                        a(href='/menu/appetizer') Appetizer
                     li.active
-                        a(href='/menu/appetizer/barbacoa') Barbacoa
+                        a(href="/menu/#{oneDish._id}")= oneDish.name
         // Appetizer
         section.section-barbacoa
             .container
@@ -63,15 +61,15 @@ html
                         h3
                             | Price:
                             span.price
-                            | #{oneDish.price}
+                            |$ #{oneDish.price}
                         .property
                             h4 Portion Size
                             p
                                 span.fa.fa-chevron-right
-                                | Weight: #{oneDish.weight}
+                                | Weight: #{oneDish.weight} g
                         .property
                             h4 Ingredients
-                            each item in oneDish.ingredients
+                            each item in oneDish.ingredients.split(",")
                                 p
                                     span.fa.fa-chevron-right
                                     | #{item}
@@ -84,7 +82,7 @@ html
             .container
                 .row.footer-info
                     .col-md-4.col-sm-12.col-xs-12
-                        img(src='../../img/logo.png', alt='')
+                        img(src='/img/logo.png', alt='')
                         p= generalInfo.mainDescription
                     .col-md-4.col-sm-12.col-xs-12
                         h4 Instagram
@@ -94,7 +92,7 @@ html
                                 each instaItem in instagram
                                     .insta-item
                                         a.insta-link(href='#{instaItem.link}', target='_blank')
-                                            img.insta-img(src='../../#{instaItem.image}', alt='')
+                                            img.insta-img(src='../#{instaItem.image}', alt='')
 
 
                     .col-md-4.col-sm-12.col-xs-12

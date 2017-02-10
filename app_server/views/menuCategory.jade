@@ -60,9 +60,9 @@ html
                     each dish in dishesInCategory
                         .receipe
                             h5
-                                a(href='#{dish.link}')= dish.name
-                                span.price.pull-right= dish.price
-                            p= dish.description
+                                a(href="/menu/#{dish._id}")= dish.name
+                                span.price.pull-right $ #{dish.price}
+                            p= dish.ingredients
 
         footer
             .container

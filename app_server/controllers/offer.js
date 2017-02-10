@@ -1,5 +1,20 @@
 /* GET Offer page */
-module.exports.index = function(req, res){
+var request = require('request');
+var apiOptions = {server : "http://localhost:3000"};
+/*if (process.env.NODE_ENV === 'production') {
+ apiOptions.server = "https://mysite.herokuapp.com";
+ }*/
+
+var renderOfferPage = function(req, res, responseBody){
+    var message;
+    if (!(responseBody instanceof Array)) {
+        message = "API lookup error";
+        responseBody = [];
+    } else {
+        if (!responseBody.length) {
+            message = "No places found nearby";
+        }
+    }
     res.render('offers', {
         title: 'Offers',
         generalInfo: {
@@ -55,19 +70,7 @@ module.exports.index = function(req, res){
             link: 'https://www.instagram.com/p/BK76usIBxMX/',
             image: 'img/insta/insta-8.jpg'
         }],
-        offers: [{
-            name:'Mexican lunch',
-            price:'20',
-            specialItems:['Mild Guacamole','Frutas Guacamole','Rojo Guacamole','Ceviche Peruano']
-        },{
-            name:'Burito lunch',
-            price:'18',
-            specialItems:['Hamachi','Toro Taquitos','Sopa de Tortilla','Ensalada de Jicama']
-        },{
-            name:'Tokito lunch',
-            price:'22',
-            specialItems:['Quesadilla de Camaron','Quesadilla de Tuetano','Hongos & Nopales','Polo Taco']
-        }],
+        offers: responseBody,
         offerTestimonials: {
             title: 'What people are saying about our restaurant',
             text: 'Anyone, who visits our place leaves us well fed and in a great mood!'
@@ -84,10 +87,31 @@ module.exports.index = function(req, res){
             postedOn: 'posted on, foursquare'
         },{
             text: 'Whenever I feel hungry or fancy a romantic dining out with my fiancee, we always end up booking a table up here… ' +
-                    'It’s just so festive and tasty, I guess we just can’t do anything about it…',
+            'It’s just so festive and tasty, I guess we just can’t do anything about it…',
             avatar: 'img/testimonial-1.jpg',
             name: 'Steven Winchester',
             postedOn: 'posted on, Yelp'
         }],
+        message: message
     });
 };
+
+
+
+module.exports.index = function(req, res){
+    var requestOptions, path;
+    path = '/api/offers';
+    requestOptions = {
+        url : apiOptions.server + path,
+        method : "GET",
+        json : {},
+        qs : {}
+    };
+    request(
+        requestOptions,
+        function(err, response, body) {
+            renderOfferPage(req, res, body);
+        }
+    );
+};
+

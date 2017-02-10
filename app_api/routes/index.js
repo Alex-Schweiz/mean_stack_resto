@@ -37,11 +37,11 @@ router.put('/services/:serviceid', ctrlServices.servicesUpdateOne);
 router.delete('/services/:serviceid', ctrlServices.servicesDeleteOne);
 
 // Menu
-router.get('/menu', ctrlMenus.menusList);
-router.post('/menu', ctrlMenus.menusCreate);
-router.get('/menu/:menuid', ctrlMenus.menusReadOne);
-router.put('/menu/:menuid', ctrlMenus.menusUpdateOne);
-router.delete('/menu/:menuid', ctrlMenus.menusDeleteOne);
+router.get('/menus', ctrlMenus.menusList);
+router.post('/menus', ctrlMenus.menusCreate);
+router.get('/menus/:menuid', ctrlMenus.menusReadOne);
+router.put('/menus/:menuid', ctrlMenus.menusUpdateOne);
+router.delete('/menus/:menuid', ctrlMenus.menusDeleteOne);
 
 //Admin Section
 // Clients
