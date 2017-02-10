@@ -1,3 +1,4 @@
+/* GET Team Member page */
 var request = require('request');
 var apiOptions = {server : "http://localhost:3000"};
 /*if (process.env.NODE_ENV === 'production') {
@@ -64,7 +65,7 @@ var renderTeamMemberPage = function (req, res, teamMemberInfo) {
     });
 };
 
-module.exports.teamMember = function(req, res){
+module.exports.index = function(req, res){
     var requestOptions, path;
     path = "/api/teams/" + req.params.teamid;
     requestOptions = {

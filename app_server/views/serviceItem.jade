@@ -49,18 +49,18 @@ html
                     li
                         a(href='/services') Services
                     li.active
-                        a(href='/services/school-menu') School Menu
+                        a(href='/services/#{serviceInfo._id}')= serviceInfo.name
         // School menu header
         section.school-menu-header
             .container
-                h2= sectionText.title
-                p= sectionText.text
+                h2= serviceInfo.name
+                p= serviceInfo.description
         // School menu body
         section.school-menu-body
             .container
                 h5= serviceInfo.headText
                 p= serviceInfo.upperText
-                img.img-responsive(src='../img/school-menu-1-1.jpg', alt='')
+                img.img-responsive(src='#{serviceInfo.image}', alt='#{serviceInfo.name}')
                 p= serviceInfo.lowerText
         // Reservation
         section.section-reservation

@@ -1,22 +1,13 @@
-/* GET Service page */
+/* GET Service Item page*/
 var request = require('request');
 var apiOptions = {server : "http://localhost:3000"};
 /*if (process.env.NODE_ENV === 'production') {
  apiOptions.server = "https://mysite.herokuapp.com";
  }*/
 
-var renderServicePage = function(req, res, responseBody){
-    var message;
-    if (!(responseBody instanceof Array)) {
-        message = "API lookup error";
-        responseBody = [];
-    } else {
-        if (!responseBody.length) {
-            message = "No places found nearby";
-        }
-    }
-    res.render('services', {
-        title: 'Services',
+var renderServiceItemPage = function (req, res, serviceItem) {
+    res.render('serviceItem', {
+        title: 'Service Item',
         generalInfo: {
             address: '6087 Richmond hwy, Alexandria, VA',
             tel: '703 329 0632',
@@ -27,7 +18,7 @@ var renderServicePage = function(req, res, responseBody){
             testimonialsTitle: 'See how happy all of our visitors are',
             mainDescription: 'Hidalgo is the most authentically Mexican restaurant in Juneau and probably in the whole of Alaska! We bring the ' +
             'traditional Mexican cuisine and mariachi bands to this cold-weathered state... Try any of our ' +
-            'Mexican dishes, be it a nacho with jalapeño or a tequila induced burrito, and you\'ll feel like visiting Mexico!',
+            'Mexican dishes, be it a nacho with jalapeño or a tequila induced burrito, and you\'ll feel like visiting Mexico!'
         },
         navMenu: [{
             link: '/',
@@ -70,25 +61,25 @@ var renderServicePage = function(req, res, responseBody){
             link: 'https://www.instagram.com/p/BK76usIBxMX/',
             image: 'img/insta/insta-8.jpg'
         }],
-        allServicesInfo: responseBody,
-        message: message
+        serviceInfo: serviceItem
     });
 };
 
 
+
 module.exports.index = function(req, res){
     var requestOptions, path;
-    path = '/api/services';
+    path = "/api/services/" + req.params.serviceid;
     requestOptions = {
         url : apiOptions.server + path,
         method : "GET",
-        json : {},
-        qs : {}
+        json : {}
     };
     request(
         requestOptions,
         function(err, response, body) {
-            renderServicePage(req, res, body);
+            var data = body;
+            renderServiceItemPage(req, res, data);
         }
     );
 };

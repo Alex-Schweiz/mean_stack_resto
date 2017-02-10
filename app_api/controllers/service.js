@@ -33,8 +33,11 @@ module.exports.servicesCreate = function(req, res) {
     serviceItem.create({
         name: req.body.name,
         image: req.body.image,
-        link: req.body.link,
-        description: req.body.description
+        icon: req.body.icon,
+        description: req.body.description,
+        headText: req.body.headText,
+        upperText: req.body.upperText,
+        lowerText: req.body.lowerText
     }, function(err, offer) {
         if (err) {
             sendJsonResponse(res, 400, err);
@@ -89,8 +92,11 @@ module.exports.servicesUpdateOne = function(req, res) {
                 }
                 service.name = req.body.name;
                 service.image = req.body.image;
-                service.link = req.body.link;
+                service.icon = req.body.icon;
                 service.description = req.body.description;
+                service.headText = req.body.headText;
+                service.upperText = req.body.upperText;
+                service.lowerText = req.body.lowerText;
                 service.save(function(err, service) {
                     if (err) {
                         sendJsonResponse(res, 404, err);
