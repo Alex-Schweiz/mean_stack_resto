@@ -34,6 +34,11 @@ block content
                     .page-title
                         .title_left
                             h3 Employees
+                        .pull-right
+                            a(href='/admin')
+                                button.btn.btn-success(type='button')
+                                    i.fa.fa-plus
+                                    |   Add new
                     .clearfix.row
                     .section-employees
                         each employee in employees

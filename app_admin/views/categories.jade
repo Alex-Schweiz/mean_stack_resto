@@ -34,6 +34,11 @@ block content
                     .page-title
                         .title_left
                             h3 Categories
+                        .pull-right
+                            a(href='/admin')
+                                button.btn.btn-success(type='button')
+                                    i.fa.fa-plus
+                                    |   Add new
                     .clearfix
                     .row
                         .col-md-6
@@ -45,9 +50,21 @@ block content
                                         th id
                                         th Title
                                         th Description
+                                        th
+                                            span.pull-right Actions
                                 tbody
                                     each category in categories
                                         tr
                                             th= category.id
                                             td= category.title
                                             td= category.description
+                                            td
+                                                .pull-right
+                                                    a(href='/admin')
+                                                        button.btn.btn-warning(type='button')
+                                                            i.fa.fa-pencil
+                                                            |   Edit
+                                                    a(href='/admin')
+                                                        button.btn.btn-danger(type='button')
+                                                            i.fa.fa-trash
+                                                            |   Delete

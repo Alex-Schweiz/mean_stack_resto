@@ -34,6 +34,11 @@ block content
                     .page-title
                         .title_left
                             h3 Jobs
+                        .pull-right
+                            a(href='/admin')
+                                button.btn.btn-success(type='button')
+                                    i.fa.fa-plus
+                                    |   Add new
                     .clearfix
                     .row
                         .col-md-6
@@ -48,6 +53,8 @@ block content
                                         th Requirements
                                         th Salary
                                         th Comments
+                                        th
+                                            span.pull-right Actions
                                 tbody
                                     each job in jobs
                                         tr
@@ -57,3 +64,13 @@ block content
                                             td= job.requirements
                                             td= job.salary
                                             td= job.comments
+                                            td
+                                                .pull-right
+                                                    a(href='/admin')
+                                                        button.btn.btn-warning(type='button')
+                                                            i.fa.fa-pencil
+                                                            |   Edit
+                                                    a(href='/admin')
+                                                        button.btn.btn-danger(type='button')
+                                                            i.fa.fa-trash
+                                                            |   Delete

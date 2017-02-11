@@ -34,6 +34,11 @@ block content
                     .page-title
                         .title_left
                             h3 Deliveries
+                        .pull-right
+                            a(href='/admin')
+                                button.btn.btn-success(type='button')
+                                    i.fa.fa-plus
+                                    |   Add new
                     .clearfix
                     .row
                         .col-md-12.col-sm-12.col-xs-12
@@ -49,6 +54,8 @@ block content
                                         th Address
                                         th Price
                                         th Date
+                                        th
+                                            span.pull-right Actions
                                 tbody
                                     each delivery in deliveries
                                         tr
@@ -61,3 +68,13 @@ block content
                                             td= delivery.address
                                             td= delivery.price
                                             td= delivery.date
+                                            td
+                                                .pull-right
+                                                    a(href='/admin')
+                                                        button.btn.btn-warning(type='button')
+                                                            i.fa.fa-pencil
+                                                            |   Edit
+                                                    a(href='/admin')
+                                                        button.btn.btn-danger(type='button')
+                                                            i.fa.fa-trash
+                                                            |   Delete

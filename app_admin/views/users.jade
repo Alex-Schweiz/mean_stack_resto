@@ -35,6 +35,11 @@ block content
                     .page-title
                         .title_left
                             h3 Users
+                        .pull-right
+                            a(href='/admin')
+                                button.btn.btn-success(type='button')
+                                    i.fa.fa-plus
+                                    |   Add new
                     .clearfix
                     .row
                         .col-md-6
@@ -50,7 +55,10 @@ block content
                                         th Name
                                         th Phone
                                         th Role
+                                        th Address
                                         th Birth date
+                                        th
+                                            span.pull-right Actions
                                 tbody
                                     each user in users
                                         tr
@@ -64,3 +72,13 @@ block content
                                             td= user.phone
                                             td= user.address
                                             td= user.birthdate
+                                            td
+                                                .pull-right
+                                                    a(href='/admin')
+                                                        button.btn.btn-warning(type='button')
+                                                            i.fa.fa-pencil
+                                                            |   Edit
+                                                    a(href='/admin')
+                                                        button.btn.btn-danger(type='button')
+                                                            i.fa.fa-trash
+                                                            |   Delete

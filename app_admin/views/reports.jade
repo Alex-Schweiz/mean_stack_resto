@@ -35,6 +35,11 @@ block content
                     .page-title
                         .title_left
                             h3 Reports
+                        .pull-right
+                            a(href='/admin')
+                                button.btn.btn-success(type='button')
+                                    i.fa.fa-plus
+                                    |   Add new
                     .clearfix
                     .row
                         .col-md-6
@@ -49,6 +54,8 @@ block content
                                         th Delivery
                                         th Restaurant
                                         th Avarage cheque
+                                        th
+                                            span.pull-right Actions
                                 tbody
                                     each report in reports
                                         tr
@@ -58,3 +65,13 @@ block content
                                             td= report.delivery
                                             td= report.restaurant
                                             td= report.avarageCheque
+                                            td
+                                                .pull-right
+                                                    a(href='/admin')
+                                                        button.btn.btn-warning(type='button')
+                                                            i.fa.fa-pencil
+                                                            |   Edit
+                                                    a(href='/admin')
+                                                        button.btn.btn-danger(type='button')
+                                                            i.fa.fa-trash
+                                                            |   Delete

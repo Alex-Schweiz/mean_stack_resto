@@ -34,6 +34,11 @@ block content
                     .page-title
                         .title_left
                             h3 Clients
+                        .pull-right
+                            a(href='/admin')
+                                button.btn.btn-success(type='button')
+                                    i.fa.fa-plus
+                                    |   Add new
                     .clearfix
                     .row
                         .col-md-12.col-sm-12.col-xs-12
@@ -49,6 +54,8 @@ block content
                                         th Phone
                                         th Address
                                         th Birth date
+                                        th
+                                            span.pull-right Actions
                                 tbody
                                     each client in clients
                                         tr
@@ -61,3 +68,13 @@ block content
                                             td= client.phone
                                             td= client.address
                                             td= client.birthdate
+                                            td
+                                                .pull-right
+                                                    a(href='/admin')
+                                                        button.btn.btn-warning(type='button')
+                                                            i.fa.fa-pencil
+                                                            |   Edit
+                                                    a(href='/admin')
+                                                        button.btn.btn-danger(type='button')
+                                                            i.fa.fa-trash
+                                                            |   Delete

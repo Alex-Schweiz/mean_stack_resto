@@ -35,6 +35,11 @@ block content
                     .page-title
                         .title_left
                             h3 Storage
+                        .pull-right
+                            a(href='/admin')
+                                button.btn.btn-success(type='button')
+                                    i.fa.fa-plus
+                                    |   Add new
                     .clearfix
                     .row
                         .col-md-12.col-sm-12.col-xs-12
@@ -49,6 +54,8 @@ block content
                                         th Supplier
                                         th Price of 1
                                         th Date of update
+                                        th
+                                            span.pull-right Actions
                                 tbody
                                     each storageItem in storage
                                         tr
@@ -59,3 +66,13 @@ block content
                                             td= storageItem.supplier
                                             td= storageItem.onePrice
                                             td= storageItem.dateOfUpdate
+                                            td
+                                                .pull-right
+                                                    a(href='/admin')
+                                                        button.btn.btn-warning(type='button')
+                                                            i.fa.fa-pencil
+                                                            |   Edit
+                                                    a(href='/admin')
+                                                        button.btn.btn-danger(type='button')
+                                                            i.fa.fa-trash
+                                                            |   Delete
