@@ -2,40 +2,62 @@ footer
     .container
         .row.footer-info
             .col-md-4.col-sm-12.col-xs-12
-                img(src='img/logo.png', alt='')
-                p= generalInfo.mainDescription
+                img(src='/img/logo.png', alt='Alex Resto')
+                p
+                    | Hidalgo is the most authentically Mexican restaurant in Juneau and probably in the whole of Alaska! We bring the
+                    | traditional Mexican cuisine and mariachi bands to this cold-weathered state... Try any of our
+                    | Mexican dishes, be it a nacho
             .col-md-4.col-sm-12.col-xs-12
-                h4 Instagram
+                h2 Instagram
                 .insta-items
                     // First row
                     .row
-                        each instaItem in instagram
-                            .insta-item
-                                a.insta-link(href='#{instaItem.link}', target='_blank')
-                                    img.insta-img(src='#{instaItem.image}', alt='')
-
-
+                        .insta-item
+                            a.insta-link(href='https://www.instagram.com/p/BK76usIBxMX/', target='_blank')
+                                img.insta-img(src='/img/insta/insta-1.jpg', alt='')
+                        .insta-item
+                            a.insta-link(href='https://www.instagram.com/p/BK76usIBxMX/', target='_blank')
+                                img.insta-img(src='/img/insta/insta-2.jpg', alt='')
+                        .insta-item
+                            a.insta-link(href='https://www.instagram.com/p/BK76usIBxMX/', target='_blank')
+                                img.insta-img(src='/img/insta/insta-3.jpg', alt='')
+                        .insta-item
+                            a.insta-link(href='https://www.instagram.com/p/BK76usIBxMX/', target='_blank')
+                                img.insta-img(src='/img/insta/insta-4.jpg', alt='')
+                    // Second row
+                    .row
+                        .insta-item
+                            a.insta-link(href='https://www.instagram.com/p/BK76usIBxMX/', target='_blank')
+                                img.insta-img(src='/img/insta/insta-5.jpg', alt='')
+                        .insta-item
+                            a.insta-link(href='https://www.instagram.com/p/BK76usIBxMX/', target='_blank')
+                                img.insta-img(src='/img/insta/insta-6.jpg', alt='')
+                        .insta-item
+                            a.insta-link(href='https://www.instagram.com/p/BK76usIBxMX/', target='_blank')
+                                img.insta-img(src='/img/insta/insta-7.jpg', alt='')
+                        .insta-item
+                            a.insta-link(href='https://www.instagram.com/p/BK76usIBxMX/', target='_blank')
+                                img.insta-img(src='/img/insta/insta-8.jpg', alt='')
             .col-md-4.col-sm-12.col-xs-12
-                h4 Contact us
+                h2 Contact us
                 ul
                     li
                         span.fa.fa-map-marker
-                        |  #{generalInfo.address}
+                        |  6087 Richmond hwy, Alexandria, VA
                     li
                         span.fa.fa-phone
-                        |  #{generalInfo.tel}
+                        |  703 329 0632
                     li
                         span.fa.fa-clock-o
-                        | #{generalInfo.workingTime}
+                        |  Mo-Fr 11:00-00:00, Sa-Su 15:00-00:00
                     li
                         span.fa.fa-envelope
-                        |  #{generalInfo.email}
-    hr
+                        |  info@demolink.org
 // lower footer
 section.lower-footer
     .container.lower-footer
         .col-md-6.col-xs-12
-            p= generalInfo.copyright
+            p © 2017 Alex Resto. All Rights Reserved. Terms of use and Privacy Policy
         .col-md-6.col-xs-12
             ul.pull-right
                 li

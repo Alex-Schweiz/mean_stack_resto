@@ -9,13 +9,13 @@ html(lang='en')
                     ul.pull-right
                         li
                             span.fa.fa-map-marker
-                            | #{generalInfo.address}
+                            |  #{generalInfo.address}
                         li
                             span.fa.fa-phone
-                            | #{generalInfo.tel}
+                            |  #{generalInfo.tel}
                         li
                             span.fa.fa-clock-o
-                            | #{generalInfo.workingTime}
+                            |  #{generalInfo.workingTime}
                 .row
                     img(src='img/logo.png', alt='logo')
                     nav.pull-right
@@ -34,7 +34,7 @@ html(lang='en')
                 .row
                     .col-md-6
                         h2= sectionKebab.title
-                        h5= sectionKebab.description
+                        p= sectionKebab.description
                         p= sectionKebab.text
                         a(href='') About Us
                     .col-md-6
@@ -79,7 +79,7 @@ html(lang='en')
             .container
                 .col-md-7
                     h2= chiefWords.name
-                    h4= chiefWords.h4
+                    p= chiefWords.h4
                     p= chiefWords.p1
                     p= chiefWords.p2
         // Interior
@@ -87,7 +87,7 @@ html(lang='en')
             .container
                 .col-md-6
                     h2= homeInterior.h2
-                    h6= homeInterior.h6
+                    p= homeInterior.h6
                     p= homeInterior.p
                     a.btn(href='') Gallery
         // footer

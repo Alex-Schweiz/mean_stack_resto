@@ -1,44 +1,6 @@
-html
-    head
-        meta(charset='UTF-8')
-        meta(name='viewport', content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0')
-        meta(http-equiv='X-UA-Compatible', content='ie=edge')
-        title= title
-        // Font Alegreya
-        link(href='https://fonts.googleapis.com/css?family=Alegreya+Sans:400,400i,700,800', rel='stylesheet')
-        // font awesome
-        link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
-        // font icon
-        link(rel='shortcut icon', type='image/png', href='img/icon.png')
-        // Latest compiled and minified CSS
-        link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
-        // Custom style
-        link(rel='stylesheet', href='../css/styles.css')
-        // jQuery library
-        script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js')
-        // Latest compiled Bootstrap JS
-        script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
-    body
-        section.common-menu
-            .container
-                .row.upper-info
-                    ul.pull-right
-                        li
-                            span.fa.fa-map-marker
-                            | #{generalInfo.address}
-                        li
-                            span.fa.fa-phone
-                            | #{generalInfo.tel}
-                        li
-                            span.fa.fa-clock-o
-                            | #{generalInfo.workingTime}
-                .row
-                    img(src='../img/logo.png', alt='logo')
-                    nav.pull-right
-                        ul.menu
-                            each nav in navMenu
-                                li
-                                    a(href='#{nav.link}')= nav.name
+extends layouts/main
+
+block content
         // Breadcrumbs
         .breadcrumb
             .container
@@ -93,53 +55,3 @@ html
                                 span.form-validation
                         .col-sm-2
                             button.btn.btn-primary(type='submit') Submit
-        footer
-            .container
-                .row.footer-info
-                    .col-md-4.col-sm-12.col-xs-12
-                        img(src='../img/logo.png', alt='')
-                        p= generalInfo.mainDescription
-                    .col-md-4.col-sm-12.col-xs-12
-                        h4 Instagram
-                        .insta-items
-                            // First row
-                            .row
-                                each instaItem in instagram
-                                    .insta-item
-                                        a.insta-link(href='#{instaItem.link}', target='_blank')
-                                            img.insta-img(src='../#{instaItem.image}', alt='')
-
-
-                    .col-md-4.col-sm-12.col-xs-12
-                        h4 Contact us
-                        ul
-                            li
-                                span.fa.fa-map-marker
-                                |  #{generalInfo.address}
-                            li
-                                span.fa.fa-phone
-                                |  #{generalInfo.tel}
-                            li
-                                span.fa.fa-clock-o
-                                | #{generalInfo.workingTime}
-                            li
-                                span.fa.fa-envelope
-                                |  #{generalInfo.email}
-            hr
-        // lower footer
-        section.lower-footer
-            .container.lower-footer
-                .col-md-6.col-xs-12
-                    p= generalInfo.copyright
-                .col-md-6.col-xs-12
-                    ul.pull-right
-                        li
-                            a.icon.fa.fa-facebook(href='#')
-                        li
-                            a.icon.fa.fa-twitter(href='#')
-                        li
-                            a.icon.fa.fa-google-plus(href='#')
-                        li
-                            a.icon.fa.fa-youtube(href='#')
-                        li
-                            a.icon.fa.fa-rss(href='#')

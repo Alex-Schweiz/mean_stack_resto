@@ -1,13 +1,4 @@
-body {
-    font-style: normal;
-    font-weight: 300;
-    font-size: 15px;
-    line-height: 1.65;
-    font-family: 'Open Sans', sans-serif;
-    letter-spacing: 0px;
-    text-align: left;
-    color: #686868;
-}
+
 
 span {
     color: #cad068;
@@ -33,7 +24,7 @@ header li {
 
 .menu li a {
     padding: 0 35px 50px;
-    font-size: 16px;
+    font-size: 21px;
     line-height: 22px;
     font-weight: 600;
     color: #fff;
@@ -103,11 +94,12 @@ header li {
 .section-shaurma p {
     font-weight: 300;
     margin-top: 30px;
-    font-size: 16px;
+    font-size: 18px;
     color: #686868;
 }
 
 .section-shaurma a {
+    font-size: 24px;
     color: #cad068;
 }
 
@@ -163,7 +155,7 @@ header li {
 
 .section-chef h5 {
     margin-left: 0;
-    font-size: 20px;
+    font-size: 26px;
     line-height: 24px;
 }
 
@@ -172,12 +164,12 @@ header li {
 }
 
 .receipe {
-    margin:15px 25px;
+    margin:1px 2px;
 }
 
 .receipe p{
     margin-bottom: 25px;
-    font-size: 13px;
+    font-size: 18px;
     color: #bdbdbd;
 }
 
@@ -208,7 +200,6 @@ header li {
 
 .section-testimonials h5 {
     font-size: 20px;
-    padding-top: 40px;
     text-transform: uppercase;
     padding-top: 10px;
     color: #686868;
@@ -272,7 +263,7 @@ header li {
 .section-the-chef p {
     margin-top: 30px;
     color: #686868;
-    font-size: 15px;
+    font-size: 20px;
     line-height: 18px;
 }
 
@@ -292,16 +283,10 @@ header li {
     text-transform: uppercase;
 }
 
-.section-interior h6 {
-    margin-top: 40px;
-    font-size: 18px;
-    line-height: 24px;
-}
-
 .section-interior p {
     margin-top: 40px;
-    font-size: 16px;
-    line-height: 20px;
+    font-size: 20px;
+    line-height: 22px;
 }
 
 /* footer */
@@ -329,7 +314,7 @@ footer p {
 }
 
 .footer-info {
-    margin-top: 110px;
+    margin-top: 60px;
 }
 
 .footer-info h4 {
@@ -569,8 +554,8 @@ hr {
 
 .section-team-top p {
     margin-top: 25px;
-    font-size: 16px;
-    line-height: 18px;
+    font-size: 24px;
+    line-height: 28px;
     font-weight: 300;
 }
 
@@ -599,7 +584,7 @@ hr {
 
 .section-team-body .position {
     color: #bbb;
-    font-size: 15px;
+    font-size: 24px;
     font-weight: 300;
 }
 
@@ -895,4 +880,15 @@ hr {
 .dish-content span{
     color: #686868;
     padding-right: 20px;
+}
+
+body {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 1.65;
+    font-family: 'Alegreya Italic', arial;
+    letter-spacing: 0px;
+    text-align: left;
+    color: #686868;
 }

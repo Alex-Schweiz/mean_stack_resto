@@ -127,31 +127,6 @@ module.exports.index = function(req, res){
             h2: 'Interior',
             h6: 'Our Mexican restaurant is livid, bright and festive not just in a culinary way, but in regard to our atmosphere and interior too!',
             p: 'Each evening we host a live mariachi band and each day our interior theme changes to represent some another Mexican state or a city, like Mexico, Juarez, Baja California and so much more…'
-        },
-        instagram: [{
-            link: 'https://www.instagram.com/p/BK76usIBxMX/',
-            image: 'img/insta/insta-1.jpg'
-        },{
-            link: 'https://www.instagram.com/p/BK76usIBxMX/',
-            image: 'img/insta/insta-2.jpg'
-        },{
-            link: 'https://www.instagram.com/p/BK76usIBxMX/',
-            image: 'img/insta/insta-3.jpg'
-        },{
-            link: 'https://www.instagram.com/p/BK76usIBxMX/',
-            image: 'img/insta/insta-4.jpg'
-        },{
-            link: 'https://www.instagram.com/p/BK76usIBxMX/',
-            image: 'img/insta/insta-5.jpg'
-        },{
-            link: 'https://www.instagram.com/p/BK76usIBxMX/',
-            image: 'img/insta/insta-6.jpg'
-        },{
-            link: 'https://www.instagram.com/p/BK76usIBxMX/',
-            image: 'img/insta/insta-7.jpg'
-        },{
-            link: 'https://www.instagram.com/p/BK76usIBxMX/',
-            image: 'img/insta/insta-8.jpg'
-        }]
+        }
     });
 };
