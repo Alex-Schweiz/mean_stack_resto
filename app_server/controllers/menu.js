@@ -7,15 +7,15 @@ module.exports.index = function(req, res){
             image:'img/appetizers.jpg',
             menuCategory:'Appetizers'
         },{
-            link:'/menu/appetizer',
+            link:'/menu/maindish',
             image:'img/main-courses.jpg',
             menuCategory:'Main Courses'
         },{
-            link:'/menu/appetizer',
+            link:'/menu/desserts',
             image:'img/desserts.jpg',
             menuCategory:'Desserts'
         },{
-            link:'/menu/appetizer',
+            link:'/menu/beverage',
             image:'img/beverages.jpg',
             menuCategory:'Beverages'
         }]

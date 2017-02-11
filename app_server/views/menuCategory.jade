@@ -10,11 +10,11 @@ block content
                     li
                         a(href='/menu') Menu
                     li.active
-                        a(href='/menu/appetizer') Appetizer
+                        a(href='/menu/#{category}')= category
         // Appetizer
         section.section-appetizer
             .container
-                h1 Appetizer
+                h1= category
         // Appetizer body
         section.section-appetizer-body
             .container
@@ -22,6 +22,6 @@ block content
                     each dish in dishesInCategory
                         .receipe
                             h5
-                                a(href="/menu/#{dish._id}")= dish.name
+                                a(href="/dish/#{dish._id}")= dish.name
                                 span.price.pull-right $ #{dish.price}
                             p= dish.ingredients

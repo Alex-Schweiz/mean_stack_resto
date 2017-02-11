@@ -7,6 +7,10 @@ var apiOptions = {server : "http://localhost:3000"};
 
 var renderMenuCategoryPage = function(req, res, responseBody){
     var message;
+    var category = req.params.category;
+    function isCategory(value) {
+        return value["category"] == category;
+    }
     if (!(responseBody instanceof Array)) {
         message = "API lookup error";
         responseBody = [];
@@ -15,9 +19,11 @@ var renderMenuCategoryPage = function(req, res, responseBody){
             message = "No places found nearby";
         }
     }
+    var menuCategory = responseBody.filter(isCategory);
     res.render('menuCategory', {
         title: 'Appetizer',
-        dishesInCategory: responseBody,
+        category: category,
+        dishesInCategory: menuCategory,
         message: message
     });
 };

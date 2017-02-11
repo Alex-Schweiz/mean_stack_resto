@@ -27,7 +27,7 @@ router.get('/offers',ctrlOffer.index);
 
 /* Menu pages */
 router.get('/menu',ctrlMenu.index);
-router.get('/menu/appetizer',ctrlMenuCategory.index);
-router.get('/menu/:dishid',ctrlDish.index);
+router.get('/menu/:category',ctrlMenuCategory.index);
+router.get('/dish/:dishid',ctrlDish.index);
 
 module.exports = router;

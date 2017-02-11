@@ -396,6 +396,7 @@ hr {
 }
 
 .breadcrumb li a {
+    text-transform: capitalize;
     color: #cad068;
     transition: .3s;
 }
