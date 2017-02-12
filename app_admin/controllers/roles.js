@@ -1,23 +1,41 @@
 /* GET Roles Admin page */
-module.exports.index = function(req, res){
+var request = require('request'),
+    apiOptions = {server : "http://localhost:3000"};
+/*if (process.env.NODE_ENV === 'production') {
+ apiOptions.server = "https://mysite.herokuapp.com";
+ }*/
+
+var renderRolesPage = function(req, res, responseBody){
+    var message;
+    if (!(responseBody instanceof Array)) {
+        message = "API lookup error";
+        responseBody = [];
+    } else {
+        if (!responseBody.length) {
+            message = "No places found nearby";
+        }
+    }
     res.render('roles', {
         title: 'Roles Dashboard',
-        roles: [{
-            id: '1',
-            title: 'Admin',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
-        },{
-            id: '2',
-            title: 'Chef',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
-        },{
-            id: '3',
-            title: 'Cook',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
-        },{
-            id: '4',
-            title: 'Accountant',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
-        }]
+        roles: responseBody,
+        message: message
     });
+};
+
+
+module.exports.index = function(req, res){
+    var requestOptions, path;
+    path = '/api/role';
+    requestOptions = {
+        url : apiOptions.server + path,
+        method : "GET",
+        json : {},
+        qs : {}
+    };
+    request(
+        requestOptions,
+        function(err, response, body) {
+            renderRolesPage(req, res, body);
+        }
+    );
 };

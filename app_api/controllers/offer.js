@@ -1,5 +1,5 @@
-var mongoose = require('mongoose');
-var offerItem = mongoose.model('Offer');
+var mongoose = require('mongoose'),
+    offerItem = mongoose.model('Offer');
 
 var sendJsonResponse = function(res, status, content) {
     res.status(status);

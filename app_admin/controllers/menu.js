@@ -1,132 +1,42 @@
 /* GET Menu Admin page */
-module.exports.index = function(req, res){
-    res.render('menu', {
+var request = require('request'),
+    apiOptions = {server : "http://localhost:3000"};
+/*if (process.env.NODE_ENV === 'production') {
+ apiOptions.server = "https://mysite.herokuapp.com";
+ }*/
+
+var renderMenuPage = function(req, res, responseBody){
+    var message;
+    if (!(responseBody instanceof Array)) {
+        message = "API lookup error";
+        responseBody = [];
+    } else {
+        if (!responseBody.length) {
+            message = "No places found nearby";
+        }
+    }
+    res.render('menuAdmin', {
         title: 'Menu Dashboard',
-        menuItems: [{
-            image: 'images/dishes/dish-1.jpg',
-            name: 'Tako Carbonado',
-            category: 'Appetizer',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium asperiores ipsa laboriosam modi, nulla quisquam tempora! Est fuga recusandae ullam.'
-        },{
-            image: 'images/dishes/dish-2.jpg',
-            name: 'Pizza Italliano',
-            category: 'Main Dish',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium asperiores ipsa laboriosam modi, nulla quisquam tempora! Est fuga recusandae ullam.'
-        },{
-            image: 'images/dishes/dish-3.jpg',
-            name: 'Macaron',
-            category: 'Desserts',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium asperiores ipsa laboriosam modi, nulla quisquam tempora! Est fuga recusandae ullam.'
-        },{
-            image: 'images/dishes/dish-4.jpg',
-            name: 'Tequila',
-            category: 'Beverages',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium asperiores ipsa laboriosam modi, nulla quisquam tempora! Est fuga recusandae ullam.'
-        },{
-            image: 'images/dishes/dish-1.jpg',
-            name: 'Tako Carbonado',
-            category: 'Appetizer',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium asperiores ipsa laboriosam modi, nulla quisquam tempora! Est fuga recusandae ullam.'
-        },{
-            image: 'images/dishes/dish-2.jpg',
-            name: 'Pizza Italliano',
-            category: 'Main Dish',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium asperiores ipsa laboriosam modi, nulla quisquam tempora! Est fuga recusandae ullam.'
-        },{
-            image: 'images/dishes/dish-3.jpg',
-            name: 'Macaron',
-            category: 'Desserts',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium asperiores ipsa laboriosam modi, nulla quisquam tempora! Est fuga recusandae ullam.'
-        },{
-            image: 'images/dishes/dish-4.jpg',
-            name: 'Tequila',
-            category: 'Beverages',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium asperiores ipsa laboriosam modi, nulla quisquam tempora! Est fuga recusandae ullam.'
-        },{
-            image: 'images/dishes/dish-1.jpg',
-            name: 'Tako Carbonado',
-            category: 'Appetizer',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium asperiores ipsa laboriosam modi, nulla quisquam tempora! Est fuga recusandae ullam.'
-        },{
-            image: 'images/dishes/dish-2.jpg',
-            name: 'Pizza Italliano',
-            category: 'Main Dish',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium asperiores ipsa laboriosam modi, nulla quisquam tempora! Est fuga recusandae ullam.'
-        },{
-            image: 'images/dishes/dish-3.jpg',
-            name: 'Macaron',
-            category: 'Desserts',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium asperiores ipsa laboriosam modi, nulla quisquam tempora! Est fuga recusandae ullam.'
-        },{
-            image: 'images/dishes/dish-4.jpg',
-            name: 'Tequila',
-            category: 'Beverages',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium asperiores ipsa laboriosam modi, nulla quisquam tempora! Est fuga recusandae ullam.'
-        },{
-            image: 'images/dishes/dish-1.jpg',
-            name: 'Tako Carbonado',
-            category: 'Appetizer',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium asperiores ipsa laboriosam modi, nulla quisquam tempora! Est fuga recusandae ullam.'
-        },{
-            image: 'images/dishes/dish-2.jpg',
-            name: 'Pizza Italliano',
-            category: 'Main Dish',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium asperiores ipsa laboriosam modi, nulla quisquam tempora! Est fuga recusandae ullam.'
-        },{
-            image: 'images/dishes/dish-3.jpg',
-            name: 'Macaron',
-            category: 'Desserts',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium asperiores ipsa laboriosam modi, nulla quisquam tempora! Est fuga recusandae ullam.'
-        },{
-            image: 'images/dishes/dish-4.jpg',
-            name: 'Tequila',
-            category: 'Beverages',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium asperiores ipsa laboriosam modi, nulla quisquam tempora! Est fuga recusandae ullam.'
-        },{
-            image: 'images/dishes/dish-1.jpg',
-            name: 'Tako Carbonado',
-            category: 'Appetizer',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium asperiores ipsa laboriosam modi, nulla quisquam tempora! Est fuga recusandae ullam.'
-        },{
-            image: 'images/dishes/dish-2.jpg',
-            name: 'Pizza Italliano',
-            category: 'Main Dish',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium asperiores ipsa laboriosam modi, nulla quisquam tempora! Est fuga recusandae ullam.'
-        },{
-            image: 'images/dishes/dish-3.jpg',
-            name: 'Macaron',
-            category: 'Desserts',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium asperiores ipsa laboriosam modi, nulla quisquam tempora! Est fuga recusandae ullam.'
-        },{
-            image: 'images/dishes/dish-4.jpg',
-            name: 'Tequila',
-            category: 'Beverages',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium asperiores ipsa laboriosam modi, nulla quisquam tempora! Est fuga recusandae ullam.'
-        },{
-            image: 'images/dishes/dish-1.jpg',
-            name: 'Tako Carbonado',
-            category: 'Appetizer',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium asperiores ipsa laboriosam modi, nulla quisquam tempora! Est fuga recusandae ullam.'
-        },{
-            image: 'images/dishes/dish-2.jpg',
-            name: 'Pizza Italliano',
-            category: 'Main Dish',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium asperiores ipsa laboriosam modi, nulla quisquam tempora! Est fuga recusandae ullam.'
-        },{
-            image: 'images/dishes/dish-3.jpg',
-            name: 'Macaron',
-            category: 'Desserts',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium asperiores ipsa laboriosam modi, nulla quisquam tempora! Est fuga recusandae ullam.'
-        },{
-            image: 'images/dishes/dish-4.jpg',
-            name: 'Tequila',
-            category: 'Beverages',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium asperiores ipsa laboriosam modi, nulla quisquam tempora! Est fuga recusandae ullam.'
-        },{
-            image: 'images/dishes/dish-1.jpg',
-            name: 'Tako Carbonado',
-            category: 'Appetizer',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium asperiores ipsa laboriosam modi, nulla quisquam tempora! Est fuga recusandae ullam.'
-        }]
+        menuItems: responseBody,
+        message: message
     });
 };
+
+
+module.exports.index = function(req, res){
+    var requestOptions, path;
+    path = '/api/menus';
+    requestOptions = {
+        url : apiOptions.server + path,
+        method : "GET",
+        json : {},
+        qs : {}
+    };
+    request(
+        requestOptions,
+        function(err, response, body) {
+            renderMenuPage(req, res, body);
+        }
+    );
+};
+

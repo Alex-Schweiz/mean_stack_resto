@@ -1,14 +1,14 @@
-var express = require('express');
-var router = express.Router();
-var ctrlHome = require('../controllers/home');
-var ctrlService = require('../controllers/service');
-var ctrlServiceItem = require('../controllers/serviceItem');
-var ctrlTeam = require('../controllers/team');
-var ctrlTeamMember = require('../controllers/team-member');
-var ctrlOffer = require('../controllers/offer');
-var ctrlMenu = require('../controllers/menu');
-var ctrlMenuCategory = require('../controllers/menuCategory');
-var ctrlDish = require('../controllers/dish');
+var express = require('express'),
+    router = express.Router(),
+    ctrlHome = require('../controllers/home'),
+    ctrlService = require('../controllers/service'),
+    ctrlServiceItem = require('../controllers/serviceItem'),
+    ctrlTeam = require('../controllers/team'),
+    ctrlTeamMember = require('../controllers/team-member'),
+    ctrlOffer = require('../controllers/offer'),
+    ctrlMenu = require('../controllers/menu'),
+    ctrlMenuCategory = require('../controllers/menuCategory'),
+    ctrlDish = require('../controllers/dish');
 
 
 /* GET home page. */

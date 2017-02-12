@@ -46,7 +46,6 @@ block content
                             table#datatable.table.table-striped.table-bordered
                                 thead
                                     tr
-                                        th id
                                         th Email
                                         th Photo
                                         th Username
@@ -59,7 +58,6 @@ block content
                                 tbody
                                     each client in clients
                                         tr
-                                            td= client.id
                                             td= client.email
                                             td
                                                 img.img-client(src='#{client.photo}', alt='')

@@ -1,19 +1,19 @@
 var express = require('express');
-var router = express.Router();
-var ctrlTeams = require('../controllers/team');
-var ctrlOffers = require('../controllers/offer');
-var ctrlServices = require('../controllers/service');
-var ctrlMenus = require('../controllers/menu');
-//Admin Controllers
-var ctrlClients = require('../controllers/client');
-var ctrlDelivery = require('../controllers/deliverys');
-var ctrlCategory = require('../controllers/category');
-var ctrlRole = require('../controllers/role');
-var ctrlJob = require('../controllers/job');
-var ctrlReport = require('../controllers/report');
-var ctrlStorage = require('../controllers/storage');
-var ctrlSupplier = require('../controllers/supplier');
-var ctrlUser = require('../controllers/user');
+    router = express.Router(),
+    ctrlTeams = require('../controllers/team'),
+    ctrlOffers = require('../controllers/offer'),
+    ctrlServices = require('../controllers/service'),
+    ctrlMenus = require('../controllers/menu'),
+    //Admin Controllers
+    ctrlClients = require('../controllers/client'),
+    ctrlDelivery = require('../controllers/deliverys'),
+    ctrlCategory = require('../controllers/category'),
+    ctrlRole = require('../controllers/role'),
+    ctrlJob = require('../controllers/job'),
+    ctrlReport = require('../controllers/report'),
+    ctrlStorage = require('../controllers/storage'),
+    ctrlSupplier = require('../controllers/supplier'),
+    ctrlUser = require('../controllers/user');
 
 // Offers
 router.get('/offers', ctrlOffers.offersList);

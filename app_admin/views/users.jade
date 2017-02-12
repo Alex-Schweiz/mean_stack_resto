@@ -48,13 +48,12 @@ block content
                             table.table.table-bordered
                                 thead
                                     tr
-                                        th id
                                         th Email
                                         th Photo
-                                        th Username
                                         th Name
-                                        th Phone
+                                        th Username
                                         th Role
+                                        th Phone
                                         th Address
                                         th Birth date
                                         th
@@ -62,7 +61,6 @@ block content
                                 tbody
                                     each user in users
                                         tr
-                                            td= user.id
                                             td= user.email
                                             td
                                                 img.img-client(src='#{user.photo}', alt='')

@@ -1,5 +1,5 @@
-var mongoose = require('mongoose');
-var storageItem = mongoose.model('Storage');
+var mongoose = require('mongoose'),
+    storageItem = mongoose.model('Storage');
 
 var sendJsonResponse = function(res, status, content) {
     res.status(status);

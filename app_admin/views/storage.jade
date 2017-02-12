@@ -47,7 +47,6 @@ block content
                             table#datatable.table.table-striped.table-bordered
                                 thead
                                     tr
-                                        th id
                                         th Title
                                         th Description
                                         th Available
@@ -59,12 +58,11 @@ block content
                                 tbody
                                     each storageItem in storage
                                         tr
-                                            td= storageItem.id
                                             td= storageItem.title
                                             td= storageItem.description
                                             td= storageItem.available
                                             td= storageItem.supplier
-                                            td= storageItem.onePrice
+                                            td $ #{storageItem.costOne}
                                             td= storageItem.dateOfUpdate
                                             td
                                                 .pull-right

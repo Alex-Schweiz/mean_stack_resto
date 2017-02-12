@@ -1,5 +1,5 @@
-var mongoose = require('mongoose');
-var roleItem = mongoose.model('Role');
+var mongoose = require('mongoose'),
+    roleItem = mongoose.model('Role');
 
 var sendJsonResponse = function(res, status, content) {
     res.status(status);

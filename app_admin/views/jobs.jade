@@ -47,7 +47,6 @@ block content
                             table.table.table-bordered
                                 thead
                                     tr
-                                        th id
                                         th position
                                         th Description
                                         th Requirements
@@ -58,11 +57,10 @@ block content
                                 tbody
                                     each job in jobs
                                         tr
-                                            th= job.id
                                             td= job.position
                                             td= job.description
                                             td= job.requirements
-                                            td= job.salary
+                                            td $ #{job.salary}
                                             td= job.comments
                                             td
                                                 .pull-right

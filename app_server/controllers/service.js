@@ -1,6 +1,6 @@
 /* GET Service page */
-var request = require('request');
-var apiOptions = {server : "http://localhost:3000"};
+var request = require('request'),
+    apiOptions = {server : "http://localhost:3000"};
 /*if (process.env.NODE_ENV === 'production') {
  apiOptions.server = "https://mysite.herokuapp.com";
  }*/

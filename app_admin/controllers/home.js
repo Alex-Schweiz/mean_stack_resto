@@ -1,6 +1,6 @@
 /* GET Home Admin page */
 module.exports.index = function(req, res){
-    res.render('index', {
+    res.render('home', {
         title: 'Dashboard',
         monthStatistics: [{
             icon: 'fa-user',

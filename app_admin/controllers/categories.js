@@ -1,23 +1,41 @@
 /* GET Menu Categories Admin page */
-module.exports.index = function(req, res){
+var request = require('request'),
+    apiOptions = {server : "http://localhost:3000"};
+/*if (process.env.NODE_ENV === 'production') {
+ apiOptions.server = "https://mysite.herokuapp.com";
+ }*/
+
+var renderCategoriesPage = function(req, res, responseBody){
+    var message;
+    if (!(responseBody instanceof Array)) {
+        message = "API lookup error";
+        responseBody = [];
+    } else {
+        if (!responseBody.length) {
+            message = "No places found nearby";
+        }
+    }
     res.render('categories', {
         title: 'Categories Dashboard',
-        categories: [{
-            id: '1',
-            title: 'Appetizer',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
-        },{
-            id: '2',
-            title: 'Main Dish',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
-        },{
-            id: '3',
-            title: 'Desert',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
-        },{
-            id: '4',
-            title: 'Beverages',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
-        }]
+        categories: responseBody,
+        message: message
     });
+};
+
+
+module.exports.index = function(req, res){
+    var requestOptions, path;
+    path = '/api/category';
+    requestOptions = {
+        url : apiOptions.server + path,
+        method : "GET",
+        json : {},
+        qs : {}
+    };
+    request(
+        requestOptions,
+        function(err, response, body) {
+            renderCategoriesPage(req, res, body);
+        }
+    );
 };

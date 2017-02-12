@@ -1,6 +1,5 @@
-var mongoose = require('mongoose');
-var request = require('request');
-var teammem = mongoose.model('Team');
+var mongoose = require('mongoose'),
+    teammem = mongoose.model('Team');
 
 
 var sendJsonResponse = function(res, status, content) {
